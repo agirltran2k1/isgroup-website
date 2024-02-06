@@ -1,0 +1,1249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --black_color: #424242;
+  --gray_blur_color: #787878;
+  --white_color: #ffffff;
+  --blue_color_1: #80cdeb;
+  --blue_color_2: #137bae;
+}
+
+@layer components {
+  .shadow-scroll {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    z-index: 10;
+    position: fixed;
+  }
+
+  /*---------------------------------Large Desktop---------------------------------*/
+  @media screen and (min-width: 1280px) {
+    /*navbarLi*/
+    .navbarLi {
+      @apply mx-6 font-medium;
+
+      &:hover {
+        @apply cursor-pointer text-blue_color_2 transition border-b-2 border-blue_color_2;
+      }
+    }
+
+    /*Trang chủ ISGroup*/
+    .text_banner {
+      @apply absolute top-36 left-20;
+    }
+
+    .p_1 {
+      @apply text-blue_color_1 font-black text-5xl/tight;
+    }
+
+    .p_2 {
+      @apply text-white_color text-lg w-1/2 mt-5;
+    }
+
+    /*button Dùng ngay phần mềm*/
+    .use-button {
+      @apply rounded-3xl cursor-pointer p-3 bg-blue_color_2 text-white_color hover:bg-opacity-85 font-medium;
+    }
+
+    /*Box Sản phẩm của chúng tôi ISGroup */
+    .col_products {
+      @apply grid grid-cols-4 gap-16 px-16 pb-10;
+    }
+
+    .col_products div {
+      @apply p-10 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+
+      &:hover {
+        @apply cursor-pointer scale-110 shadow-2xl;
+      }
+    }
+
+    .col_products div p {
+      @apply text-center text-lg font-medium mt-0;
+    }
+
+    /*About ISGroup*/
+    .col_about {
+      @apply h-auto items-center mx-48 py-10 grid grid-cols-3 gap-14;
+    }
+    .p_title {
+      @apply text-blue_color_2 font-bold text-2xl mb-4;
+    }
+
+    .p_about {
+      @apply text-black_color;
+    }
+
+    /*ISMOS*/
+    .text_banner_1 {
+      @apply absolute top-36 left-20;
+    }
+
+    .p_3 {
+      @apply text-blue_color_2 font-black text-5xl/tight;
+    }
+
+    .p_4 {
+      @apply text-black_color text-lg w-full mt-5 mb-10;
+    }
+
+    .col_outstanding {
+      @apply grid grid-cols-3 gap-10 px-32 pb-10 mx-20 mt-10;
+    }
+
+    .col_outstanding div {
+      @apply p-7 rounded-xl justify-center items-center;
+    }
+
+    .img_outstanding {
+      @apply w-24 self-center m-auto;
+    }
+
+
+    .p_outstanding_1 {
+      @apply text-center text-base font-bold text-black_color mx-5 mt-5 h-14;
+    }
+
+    .p_outstanding_2 {
+      @apply text-base mt-2 h-56;
+    }
+
+    .col_business {
+      @apply grid grid-cols-5 gap-5 px-32 pb-10 mx-20 mt-10;
+    }
+
+    .col_business div {
+      @apply p-4 rounded-xl justify-center items-center;
+    }
+
+    .col_business p {
+      @apply text-center text-lg font-medium mt-10 text-black_color;
+    }
+
+    .col_welcome {
+      @apply grid grid-cols-3 gap-10 px-32 pb-10 mx-20 mt-10;
+    }
+
+    .col_welcome div {
+      @apply grid place-content-center p-7 rounded-xl justify-center items-center;
+    }
+
+    .p_welcome_1 {
+      @apply text-center text-base font-bold text-black_color mx-5 mt-5;
+    }
+
+    .p_welcome_2 {
+      @apply text-base mt-2;
+    }
+
+
+    .col_1 {
+      @apply h-auto items-center mx-48 my-10 grid grid-cols-2 gap-14;
+    }
+    .p_title_1 {
+      @apply text-blue_color_2 font-bold text-2xl mb-4;
+    }
+
+    .p_about_1 {
+      @apply text-black_color;
+    }
+
+    .question_list {
+      @apply px-5 my-10 mx-20 rounded-lg bg-[#F3F9FF];
+    }
+
+    .ql_div_1 {
+      @apply border-b border-[#EDEDED] p-7;
+    }
+
+    .ql_div_2 {
+      @apply flex justify-between;
+    }
+
+    .ql_p_1 {
+      @apply font-medium;
+
+      &:hover {
+        @apply text-blue_color_2 cursor-pointer;
+      }
+    }
+
+    .ql_p_2 {
+      @apply text-base mt-5;
+    }
+
+    .setup_list {
+      @apply grid grid-cols-3 rounded-lg bg-[#F3F9FF] px-5 mx-52 my-10 justify-center items-center;
+    }
+
+    .sl_p_1 {
+      @apply font-medium text-blue_color_2;
+    }
+
+    .sl_p_2 {
+      @apply text-base;
+    }
+
+    .col_setup_1 {
+      @apply grid grid-cols-2 gap-10 px-32 pb-10 mx-20 mt-10;
+    }
+
+    .col_setup_1 div {
+      @apply p-7 rounded-xl justify-center items-center;
+    }
+
+    .p_col_setup_1 {
+      @apply text-center text-base font-bold text-black_color;
+    }
+
+    .p_col_setup_2 {
+      @apply text-base mt-2 mb-7;
+    }
+
+    .detail-button {
+      @apply grid mx-28 text-center rounded-3xl cursor-pointer py-3 px-5 font-medium text-lg;
+    }
+
+    /*Footer*/
+    .col_footer {
+      @apply w-full bg-[#4C4C4C] grid grid-cols-4 text-white_color p-10 justify-center items-center;
+    }
+
+    .col_footer_div_1 {
+      @apply block;
+    }
+
+    .col_footer_div_2 {
+      @apply flex items-center mb-4 gap-1;
+    }
+
+    .col_footer_p_1 {
+      @apply font-bold text-lg mb-4;
+    }
+
+    .col_footer_p_2 {
+      @apply text-base;
+    }
+  }
+
+  /*---------------------------------Small Desktop---------------------------------*/
+  @media screen and (min-width: 1000px) and (max-width: 1280px) {
+    /*navbarLi*/
+    .navbarLi {
+      @apply mx-6 font-medium;
+
+      &:hover {
+        @apply cursor-pointer text-blue_color_2 transition border-b-2 border-blue_color_2;
+      }
+    }
+
+    /*Text trong banner*/
+    .text_banner {
+      @apply absolute top-28 left-10;
+    }
+
+    .p_1 {
+      @apply text-blue_color_1 font-black text-4xl/tight;
+    }
+
+    .p_2 {
+      @apply text-white_color w-1/2 mt-5;
+    }
+
+    /*button Dùng ngay phần mềm*/
+    .use-button {
+      @apply rounded-3xl cursor-pointer p-3 bg-blue_color_2 text-white_color hover:bg-opacity-85 font-medium;
+    }
+
+    /*Box Sản phẩm của chúng tôi ISGroup */
+    .col_products {
+      @apply grid grid-cols-4 gap-0 px-5 pb-10;
+    }
+
+    .col_products div {
+      @apply p-5 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+
+      &:hover {
+        @apply cursor-pointer scale-110 shadow-2xl;
+      }
+    }
+
+    .col_products div p {
+      @apply text-center text-base font-medium;
+    }
+
+    /*About ISGroup*/
+    .col_about {
+      @apply h-auto items-center mx-20 py-10 grid grid-cols-3 gap-6;
+    }
+    .p_title {
+      @apply text-blue_color_2 font-bold text-2xl mb-4;
+    }
+
+    .p_about {
+      @apply text-black_color;
+    }
+
+    /*ISMOS*/
+    .text_banner_1 {
+      @apply absolute top-28 left-10;
+    }
+
+    .p_3 {
+      @apply text-blue_color_2 font-black text-4xl/tight;
+    }
+
+    .p_4 {
+      @apply text-black_color w-3/4 mt-5;
+    }
+
+    .col_outstanding {
+      @apply grid grid-cols-3 gap-10 px-0 pb-0 mx-20 mt-8;
+    }
+
+    .col_outstanding div {
+      @apply place-content-center grid p-5 rounded-xl justify-center items-center;
+    }
+
+    .img_outstanding {
+      @apply w-16 self-center m-auto;
+    }
+
+    .p_outstanding_1 {
+      @apply text-center text-base font-bold text-black_color mx-5 mt-5 h-14 self-center;
+    }
+
+    .p_outstanding_2 {
+      @apply text-base h-52 mt-2;
+    }
+
+    .col_business {
+      @apply grid grid-cols-5 gap-0 px-0 pb-0 mx-10 mt-10;
+    }
+
+    .col_business div {
+      @apply p-4 rounded-xl justify-center items-center;
+    }
+
+    .col_business p {
+      @apply text-center text-lg font-medium mt-10 text-black_color;
+    }
+
+    .col_welcome {
+      @apply grid grid-cols-3 gap-10 px-0 pb-0 mx-20 mt-8;
+    }
+
+    .col_welcome div {
+      @apply grid place-content-center p-7 rounded-xl justify-center items-center;
+    }
+
+    .p_welcome_1 {
+      @apply text-center text-base font-bold text-black_color mx-5 mt-5;
+    }
+
+    .p_welcome_2 {
+      @apply text-base mt-2;
+    }
+
+    .col_1 {
+      @apply h-auto items-center mx-20 py-10 grid grid-cols-2 gap-14;
+    }
+    .p_title_1 {
+      @apply text-blue_color_2 font-medium text-2xl mb-4;
+    }
+
+    .p_about_1 {
+      @apply text-black_color;
+    }
+
+    .question_list {
+      @apply px-5 my-10 mx-20 rounded-lg bg-[#F3F9FF];
+    }
+
+    .ql_div_1 {
+      @apply border-b border-[#EDEDED] p-7;
+    }
+
+    .ql_div_2 {
+      @apply flex justify-between;
+    }
+
+    .ql_p_1 {
+      @apply font-medium;
+
+      &:hover {
+        @apply text-blue_color_2 cursor-pointer;
+      }
+    }
+
+    .ql_p_2 {
+      @apply text-base mt-5;
+    }
+
+    .setup_list {
+      @apply grid grid-cols-3 rounded-lg bg-[#F3F9FF] px-5 mx-20 my-10 justify-center items-center;
+    }
+
+    .sl_p_1 {
+      @apply text-xl font-medium text-blue_color_2;
+    }
+
+    .sl_p_2 {
+      @apply text-lg;
+    }
+
+    .col_setup_1 {
+      @apply grid grid-cols-2 gap-10 px-10 pb-10 mx-10 mt-10;
+    }
+
+    .col_setup_1 div {
+      @apply relative p-7 rounded-xl justify-center items-center;
+    }
+
+    .p_col_setup_1 {
+      @apply text-center text-xl font-bold text-black_color;
+    }
+
+    .p_col_setup_2 {
+      @apply text-lg mt-2 mb-7;
+    }
+
+    .detail-button {
+      @apply grid mx-16 text-center rounded-3xl cursor-pointer py-3 px-5 font-medium text-lg;
+    }
+
+    /*Footer*/
+    .col_footer {
+      @apply w-full bg-[#4C4C4C] grid grid-cols-4 text-white_color p-10 justify-center items-center;
+    }
+
+    .col_footer_div_1 {
+      @apply block;
+    }
+
+    .col_footer_div_2 {
+      @apply flex items-center mb-4 gap-1;
+    }
+
+    .col_footer_p_1 {
+      @apply font-bold text-lg mb-4;
+    }
+
+    .col_footer_p_2 {
+      @apply text-base;
+    }
+  }
+
+  /*---------------------------------Large Tablet---------------------------------*/
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
+    /*Text trong banner ISGroup*/
+    .text_banner {
+      @apply absolute top-20 left-10;
+    }
+
+    .p_1 {
+      @apply text-blue_color_1 font-black text-2xl/tight;
+    }
+
+    .p_2 {
+      @apply text-white_color text-sm w-1/2 mt-3;
+    }
+
+    /*button Dùng ngay*/
+    .use-button {
+      @apply rounded-3xl cursor-pointer p-3 bg-blue_color_2 text-white_color hover:bg-opacity-85 font-medium;
+    }
+
+    /*Box Sản phẩm của chúng tôi ISGroup */
+    .col_products {
+      @apply grid grid-cols-2 gap-20 px-28 pb-20;
+    }
+
+    .col_products div {
+      @apply p-5 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+
+      &:hover {
+        @apply cursor-pointer scale-110 shadow-2xl;
+      }
+    }
+
+    .col_products div p {
+      @apply text-center text-lg font-medium mt-0;
+    }
+
+    /*About ISGroup*/
+    .col_about {
+      @apply h-auto items-center mx-10 py-10 grid grid-cols-3 gap-8;
+    }
+
+    .p_title {
+      @apply text-blue_color_2 font-bold text-xl mb-2;
+    }
+
+    .p_about {
+      @apply text-black_color text-sm;
+    }
+
+    /*ISMOS*/
+    .text_banner_1 {
+      @apply absolute top-16 left-10;
+    }
+
+    .p_3 {
+      @apply text-blue_color_2 font-black text-2xl/tight;
+    }
+
+    .p_4 {
+      @apply text-black_color text-sm w-2/3 mt-3;
+    }
+
+    .col_outstanding {
+      @apply grid grid-cols-3 gap-7 px-0 pb-0 mx-10 mt-8;
+    }
+
+    .col_outstanding div {
+      @apply place-content-center grid p-5 rounded-xl justify-center items-center;
+    }
+
+    .img_outstanding {
+      @apply w-16 self-center m-auto;
+    }
+
+    .p_outstanding_1 {
+      @apply text-center text-sm font-bold text-black_color mx-5 mt-5 h-10 self-center;
+    }
+
+    .p_outstanding_2 {
+      @apply text-sm mt-2 h-48;
+    }
+
+    .col_business {
+      @apply grid grid-cols-5 gap-0 px-0 pb-0 mx-5 mt-14;
+    }
+
+    .col_business div {
+      @apply p-4 rounded-xl justify-center items-center;
+    }
+
+    .col_business p {
+      @apply text-center text-base font-medium mt-10 text-black_color;
+    }
+
+    .col_welcome {
+      @apply grid grid-cols-3 gap-7 px-0 pb-0 mx-10 mt-8;
+    }
+
+    .col_welcome div {
+      @apply grid place-content-center p-7 rounded-xl justify-center items-center;
+    }
+
+    .p_welcome_1 {
+      @apply text-center text-base font-bold text-black_color mx-5 mt-5;
+    }
+
+    .p_welcome_2 {
+      @apply text-sm mt-2;
+    }
+
+    .col_1 {
+      @apply h-auto items-center mx-10 py-10 grid grid-cols-2 gap-14;
+    }
+    .p_title_1 {
+      @apply text-blue_color_2 font-medium text-xl mb-4;
+    }
+
+    .p_about_1 {
+      @apply text-black_color text-sm;
+    }
+
+    .question_list {
+      @apply px-5 my-10 mx-10 rounded-lg bg-[#F3F9FF];
+    }
+
+    .ql_div_1 {
+      @apply border-b border-[#EDEDED] p-7;
+    }
+
+    .ql_div_2 {
+      @apply flex justify-between items-center;
+    }
+
+    .ql_p_1 {
+      @apply font-medium;
+
+      &:hover {
+        @apply text-blue_color_2 cursor-pointer;
+      }
+    }
+
+    .ql_p_2 {
+      @apply text-sm mt-5;
+    }
+
+    .setup_list {
+      @apply grid grid-cols-3 rounded-lg bg-[#F3F9FF] px-5 mx-20 my-10 justify-center items-center;
+    }
+
+    .sl_p_1 {
+      @apply text-base font-medium text-blue_color_2;
+    }
+
+    .sl_p_2 {
+      @apply text-sm;
+    }
+
+    .col_setup_1 {
+      @apply grid grid-cols-2 gap-10 px-10 pb-10 mx-10 mt-10;
+    }
+
+    .col_setup_1 div {
+      @apply p-7 rounded-xl justify-center items-center;
+    }
+
+    .p_col_setup_1 {
+      @apply text-center text-base font-bold text-black_color;
+    }
+
+    .p_col_setup_2 {
+      @apply text-sm mt-2 mb-7;
+    }
+
+    .detail-button {
+      @apply grid mx-6 text-center rounded-3xl cursor-pointer py-3 px-5 font-medium text-sm;
+    }
+
+    /*Footer*/
+    .col_footer {
+      @apply w-full bg-[#4C4C4C] grid grid-cols-4 text-white_color p-16 justify-center items-center;
+    }
+
+    .col_footer_div_1 {
+      @apply block;
+    }
+
+    .col_footer_div_2 {
+      @apply flex items-center mb-4 gap-1;
+    }
+
+    .col_footer_p_1 {
+      @apply font-bold text-base mb-4;
+    }
+
+    .col_footer_p_2 {
+      @apply text-sm;
+    }
+  }
+
+  /*---------------------------------Small Tablet---------------------------------*/
+  @media screen and (min-width: 481px) and (max-width: 767px) {
+    /*Text trong banner*/
+    .text_banner {
+      @apply absolute top-20 left-8;
+    }
+
+    .p_1 {
+      @apply text-blue_color_1 font-black text-lg;
+    }
+
+    .p_2 {
+      @apply hidden;
+    }
+
+    /*button Dùng ngay*/
+    .use-button {
+      @apply rounded-3xl cursor-pointer p-3 bg-blue_color_2 text-white_color hover:bg-opacity-85 font-medium text-sm;
+    }
+
+    /*Box Sản phẩm của chúng tôi ISGroup */
+    .col_products {
+      @apply grid grid-cols-2 gap-10 px-10 pb-20;
+    }
+
+    .col_products div {
+      @apply p-7 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+
+      &:hover {
+        @apply cursor-pointer scale-110 shadow-2xl;
+      }
+    }
+
+    .col_products div p {
+      @apply text-center text-sm font-medium;
+    }
+
+    /*About ISGroup*/
+    .col_about {
+      @apply h-auto items-center mx-14 pt-10 grid grid-cols-3 gap-8;
+    }
+
+    .p_title {
+      @apply text-blue_color_2 font-bold text-sm mb-2;
+    }
+
+    .p_about {
+      @apply text-black_color text-xs pb-10;
+    }
+
+    /*ISMOS*/
+    .text_banner_1 {
+      @apply absolute top-20 left-8;
+    }
+
+    .p_3 {
+      @apply text-blue_color_2 font-black text-lg;
+    }
+
+    .p_4 {
+      @apply hidden;
+    }
+
+    .col_outstanding {
+      @apply px-10 pb-0 mx-10 mt-8;
+    }
+
+    .col_outstanding div {
+      @apply grid place-content-center mb-10 p-10 rounded-xl justify-center items-center text-lg;
+    }
+
+    .img_outstanding {
+      @apply w-20 self-center m-auto
+    }
+
+    .p_outstanding_1 {
+      @apply text-center text-base font-bold text-black_color m-5;
+    }
+
+    .p_outstanding_2 {
+      @apply text-sm -mt-2;
+    }
+
+    .col_business {
+      @apply grid grid-cols-4 gap-0 px-0 pb-0 mx-5 mt-14;
+    }
+
+    .col_business div {
+      @apply p-5 rounded-xl justify-center items-center;
+    }
+
+    .col_business p {
+      @apply text-center text-base font-medium mt-10 text-black_color;
+    }
+
+    .col_welcome {
+      @apply px-10 pb-0 mx-10 mt-8;
+    }
+
+    .col_welcome div {
+      @apply grid place-content-center p-10 mb-10 rounded-xl justify-center items-center;
+    }
+
+    .p_welcome_1 {
+      @apply text-center text-base font-bold text-black_color mx-5 mt-5;
+    }
+
+    .p_welcome_2 {
+      @apply text-base mt-2;
+    }
+
+    .col_1 {
+      @apply h-auto items-center mx-10 py-10;
+    }
+    .p_title_1 {
+      @apply text-blue_color_2 font-medium text-lg mb-4;
+    }
+
+    .p_about_1 {
+      @apply text-black_color text-sm;
+    }
+
+    .question_list {
+      @apply px-5 my-5 mx-10 rounded-lg bg-[#F3F9FF];
+    }
+
+    .ql_div_1 {
+      @apply border-b border-[#EDEDED] p-7;
+    }
+
+    .ql_div_2 {
+      @apply flex justify-between items-center;
+    }
+
+    .ql_p_1 {
+      @apply font-medium;
+
+      &:hover {
+        @apply text-blue_color_2 cursor-pointer;
+      }
+    }
+
+    .ql_p_2 {
+      @apply text-sm mt-5;
+    }
+
+    .setup_list {
+      @apply grid grid-cols-3 rounded-lg bg-[#F3F9FF] py-5 px-5 mx-20 my-10 justify-center items-center;
+    }
+
+    .sl_p_1 {
+      @apply text-base font-medium text-blue_color_2;
+    }
+
+    .sl_p_2 {
+      @apply text-sm;
+    }
+
+    .col_setup_1 {
+      @apply px-10 mx-10 mt-10;
+    }
+
+    .col_setup_1 div {
+      @apply p-7 rounded-xl justify-center items-center mb-10;
+    }
+
+    .p_col_setup_1 {
+      @apply text-center text-lg font-bold text-black_color;
+    }
+
+    .p_col_setup_2 {
+      @apply text-base mt-2 mb-7;
+    }
+
+    .detail-button {
+      @apply grid mx-16 rounded-3xl cursor-pointer py-3 px-5 font-medium text-sm text-center;
+    }
+
+    /*Footer*/
+    .col_footer {
+      @apply w-full bg-[#4C4C4C] grid grid-cols-2 text-white_color p-10 justify-center items-center gap-10;
+    }
+
+    .col_footer_div_1 {
+      @apply block;
+    }
+
+    .col_footer_div_2 {
+      @apply flex items-center mb-4 gap-1;
+    }
+
+    .col_footer_p_1 {
+      @apply font-bold text-base mb-4;
+    }
+
+    .col_footer_p_2 {
+      @apply text-sm;
+    }
+  }
+
+  /*---------------------------------Mobile---------------------------------*/
+  @media screen and (min-width: 350px) and (max-width: 480px) {
+    /*Text trong banner*/
+    .text_banner {
+      @apply absolute top-14 left-5;
+    }
+
+    .p_1 {
+      @apply text-blue_color_1 font-black text-base;
+    }
+
+    .p_2 {
+      @apply hidden;
+    }
+
+    /*button Dùng ngay phần mềm*/
+    .use-button {
+      display: none;
+    }
+
+    /*Box Sản phẩm của chúng tôi ISGroup */
+    .col_products {
+      @apply px-10 pb-10 mx-5;
+    }
+
+    .col_products div {
+      @apply p-7 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+
+      &:hover {
+        @apply cursor-pointer scale-110 shadow-2xl;
+      }
+    }
+
+    .col_products div p {
+      @apply text-center text-base font-medium;
+    }
+
+    /*About ISGroup*/
+    .col_about {
+      @apply h-auto items-center mx-7 pt-10;
+    }
+
+    .p_title {
+      @apply text-blue_color_2 font-bold text-base mb-2;
+    }
+
+    .p_about {
+      @apply text-black_color text-sm pb-10;
+    }
+
+    /*ISMOS*/
+    .text_banner_1 {
+      @apply absolute top-14 left-5;
+    }
+
+    .p_3 {
+      @apply text-blue_color_2 font-black text-sm;
+    }
+
+    .p_4 {
+      @apply hidden;
+    }
+
+    .col_outstanding {
+      @apply px-5 pb-0 mx-2 mt-8;
+    }
+
+    .col_outstanding div {
+      @apply grid place-content-center mb-10 p-10 rounded-xl justify-center items-center text-lg;
+    }
+
+    .img_outstanding {
+      @apply w-16 self-center m-auto
+    }
+
+    .p_outstanding_1 {
+      @apply text-center text-base font-bold text-black_color m-5;
+    }
+
+    .p_outstanding_2 {
+      @apply text-sm -mt-2;
+    }
+
+    .col_business {
+      @apply grid grid-cols-2 gap-0 px-0 pb-0 mx-5 mt-5;
+    }
+
+    .col_business div {
+      @apply p-8 rounded-xl justify-center items-center;
+    }
+
+    .col_business p {
+      @apply text-center text-sm font-medium mt-5 text-black_color;
+    }
+
+    .col_welcome {
+      @apply px-5 pb-0 mx-2 mt-8;
+    }
+
+    .col_welcome div {
+      @apply grid place-content-center p-10 mb-10 rounded-xl justify-center items-center;
+    }
+
+    .p_welcome_1 {
+      @apply text-center text-base font-bold text-black_color mx-5 mt-5;
+    }
+
+    .p_welcome_2 {
+      @apply text-sm mt-2;
+    }
+
+    .col_1 {
+      @apply h-auto items-center mx-10 py-10;
+    }
+    .p_title_1 {
+      @apply text-blue_color_2 font-medium text-lg mb-4;
+    }
+
+    .p_about_1 {
+      @apply text-black_color text-sm;
+    }
+
+    .question_list {
+      @apply px-5 my-5 mx-5 rounded-lg bg-[#F3F9FF];
+    }
+
+    .ql_div_1 {
+      @apply border-b border-[#EDEDED] p-7;
+    }
+
+    .ql_div_2 {
+      @apply flex justify-between items-center;
+    }
+
+    .ql_p_1 {
+      @apply text-sm font-medium mr-3;
+
+      &:hover {
+        @apply text-blue_color_2 cursor-pointer;
+      }
+    }
+
+    .ql_p_2 {
+      @apply text-sm mt-5;
+    }
+
+    .setup_list {
+      @apply mx-7 grid grid-cols-3 rounded-lg bg-[#F3F9FF] py-5 px-5 my-10 justify-center items-center;
+    }
+
+    .sl_p_1 {
+      @apply text-sm font-medium text-blue_color_2;
+    }
+
+    .sl_p_2 {
+      @apply text-xs;
+    }
+
+    .col_setup_1 {
+      @apply px-0 mx-7 mt-10;
+    }
+
+    .col_setup_1 div {
+      @apply p-7 rounded-xl justify-center items-center mb-10;
+    }
+
+    .p_col_setup_1 {
+      @apply text-center text-sm font-bold text-black_color;
+    }
+
+    .p_col_setup_2 {
+      @apply text-xs mt-2 mb-7;
+    }
+
+    .detail-button {
+      @apply grid mx-1 rounded-3xl cursor-pointer py-3 px-5 font-medium text-xs text-center;
+    }
+    /*Footer*/
+    .col_footer {
+      @apply w-full bg-[#4C4C4C] text-white_color p-10 justify-center items-center gap-10;
+    }
+
+    .col_footer_div_1 {
+      @apply block;
+    }
+
+    .col_footer_div_2 {
+      @apply flex items-center mb-4 gap-1;
+    }
+
+    .col_footer_p_1 {
+      @apply font-bold text-base mb-4;
+    }
+
+    .col_footer_p_2 {
+      @apply text-sm;
+    }
+  }
+
+  /*---------------------------------Samll Mobile---------------------------------*/
+  @media screen and (max-width: 349px) {
+    /*Text trong banner*/
+    .text_banner {
+      @apply absolute top-14 left-5;
+    }
+
+    .p_1 {
+      @apply text-blue_color_1 font-black text-base;
+    }
+
+    .p_2 {
+      @apply hidden;
+    }
+
+    /*button Dùng ngay phần mềm*/
+    .use-button {
+      display: none;
+    }
+
+    /*Box Sản phẩm của chúng tôi ISGroup */
+    .col_products {
+      @apply px-10 pb-10 mx-5;
+    }
+
+    .col_products div {
+      @apply p-7 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+
+      &:hover {
+        @apply cursor-pointer scale-110 shadow-2xl;
+      }
+    }
+
+    .col_products div p {
+      @apply text-center text-base font-medium;
+    }
+
+    /*About ISGroup*/
+    .col_about {
+      @apply h-auto items-center mx-7 pt-10;
+    }
+
+    .p_title {
+      @apply text-blue_color_2 font-bold text-base mb-2;
+    }
+
+    .p_about {
+      @apply text-black_color text-sm pb-10;
+    }
+
+    /*ISMOS*/
+    .text_banner_1 {
+      @apply absolute top-8 left-5;
+    }
+
+    .p_3 {
+      @apply text-blue_color_2 font-black text-sm w-5/6;
+    }
+
+    .p_4 {
+      @apply hidden;
+    }
+
+    .col_outstanding {
+      @apply px-5 pb-0 mx-0 mt-8;
+    }
+
+    .col_outstanding div {
+      @apply grid place-content-center mb-10 p-5 rounded-xl justify-center items-center text-lg;
+    }
+
+    .img_outstanding {
+      @apply w-16 self-center m-auto
+    }
+
+    .p_outstanding_1 {
+      @apply text-center text-sm font-bold text-black_color m-5;
+    }
+
+    .p_outstanding_2 {
+      @apply text-sm -mt-7;
+    }
+
+    .col_business {
+      @apply grid grid-cols-2 gap-0 px-0 pb-0 mx-5 mt-5;
+    }
+
+    .col_business div {
+      @apply p-5 rounded-xl justify-center items-center;
+    }
+
+    .col_business p {
+      @apply text-center text-sm font-medium mt-5 text-black_color;
+    }
+
+    .col_welcome {
+      @apply px-5 pb-0 mx-2 mt-8;
+    }
+
+    .col_welcome div {
+      @apply grid place-content-center p-10 mb-10 rounded-xl justify-center items-center;
+    }
+
+    .p_welcome_1 {
+      @apply text-center text-sm font-bold text-black_color mx-5 mt-5;
+    }
+
+    .p_welcome_2 {
+      @apply text-sm mt-2;
+    }
+
+    .col_1 {
+      @apply h-auto items-center mx-10 py-10;
+    }
+    .p_title_1 {
+      @apply text-blue_color_2 font-medium text-lg mb-4;
+    }
+
+    .p_about_1 {
+      @apply text-black_color text-sm;
+    }
+
+    .question_list {
+      @apply px-5 my-5 mx-5 rounded-lg bg-[#F3F9FF];
+    }
+
+    .ql_div_1 {
+      @apply border-b border-[#EDEDED] p-7;
+    }
+
+    .ql_div_2 {
+      @apply flex justify-between items-center;
+    }
+
+    .ql_p_1 {
+      @apply text-sm font-medium mr-3;
+
+      &:hover {
+        @apply text-blue_color_2 cursor-pointer;
+      }
+    }
+
+    .ql_p_2 {
+      @apply text-sm mt-5;
+    }
+
+    .setup_list {
+      @apply mx-7 grid grid-cols-3 rounded-lg bg-[#F3F9FF] py-5 px-5 my-10 justify-center items-center;
+    }
+
+    .sl_p_1 {
+      @apply text-sm font-medium text-blue_color_2;
+    }
+
+    .sl_p_2 {
+      @apply text-xs;
+    }
+
+    .col_setup_1 {
+      @apply px-0 mx-7 mt-10;
+    }
+
+    .col_setup_1 div {
+      @apply p-7 rounded-xl justify-center items-center mb-10;
+    }
+
+    .p_col_setup_1 {
+      @apply text-center text-sm font-bold text-black_color;
+    }
+
+    .p_col_setup_2 {
+      @apply text-xs mt-2 mb-7;
+    }
+
+    .detail-button {
+      @apply grid mx-1 rounded-3xl cursor-pointer py-3 px-5 font-medium text-xs text-center;
+    }
+    /*Footer*/
+    .col_footer {
+      @apply w-full bg-[#4C4C4C] text-white_color p-10 justify-center items-center gap-10;
+    }
+
+    .col_footer_div_1 {
+      @apply block;
+    }
+
+    .col_footer_div_2 {
+      @apply flex items-center mb-4 gap-1;
+    }
+
+    .col_footer_p_1 {
+      @apply font-bold text-base mb-4;
+    }
+
+    .col_footer_p_2 {
+      @apply text-sm;
+    }
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
