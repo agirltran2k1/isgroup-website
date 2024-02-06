@@ -1,10 +1,11 @@
+"use client";
 import NavBar from "@/components/NavBarISGroup";
 import Banner from "@/components/BannerISGroup";
 import Link from "next/link";
 import Image from "next/image";
+import { imageLoader } from "./utils/ImageLoader";
 
 export default function Page() {
-
   return (
     <div className="w-full bg-white_color">
       <header>
@@ -22,6 +23,7 @@ export default function Page() {
           <div className="col_products">
             <div>
               <Image
+                loader={imageLoader}
                 src="/assets/images/cart.png"
                 alt="Home"
                 quality="100"
@@ -34,24 +36,26 @@ export default function Page() {
             </div>
 
             <div>
-              <Link href='/ismos/'>
-              <Image
-                src="/assets/images/shop_window.png"
-                alt="Home"
-                quality="100"
-                layout="responsive"
-                width={500}
-                height={500}
-                className="p-10"
-              />
-              <p>
-                Quản lý gian hàng <br /> & Hỗ trợ bán hàng
-              </p>
+              <Link href="/ismos/">
+                <Image
+                  loader={imageLoader}
+                  src="/assets/images/shop_window.png"
+                  alt="Home"
+                  quality="100"
+                  layout="responsive"
+                  width={500}
+                  height={500}
+                  className="p-10"
+                />
+                <p>
+                  Quản lý gian hàng <br /> & Hỗ trợ bán hàng
+                </p>
               </Link>
             </div>
 
             <div>
               <Image
+                loader={imageLoader}
                 src="/assets/images/delivery.png"
                 alt="Home"
                 quality="100"
@@ -65,6 +69,7 @@ export default function Page() {
 
             <div>
               <Image
+                loader={imageLoader}
                 src="/assets/images/cottage.png"
                 alt="Home"
                 quality="100"
@@ -78,7 +83,6 @@ export default function Page() {
           </div>
         </div>
       </main>
-
     </div>
   );
 }

@@ -3,9 +3,9 @@ import Banner from "@/components/BannerISMos";
 import Bussiness_Inf from "@/components/Bussiness_Inf";
 import Link from "next/link";
 import Image from "next/image";
+import { imageLoader } from "../utils/ImageLoader";
 
 export default function Page() {
-
   return (
     <div className="w-full bg-white_color">
       <header>
@@ -37,6 +37,7 @@ export default function Page() {
               </p>
             </div>
             <Image
+              loader={imageLoader}
               src="/assets/images/ISMOS/img_1.png"
               alt=""
               quality="100"
@@ -48,6 +49,7 @@ export default function Page() {
 
           <div className="col_about">
             <Image
+              loader={imageLoader}
               src="/assets/images/ISMOS/img_2.png"
               alt=""
               quality="100"
@@ -79,6 +81,7 @@ export default function Page() {
               </p>
             </div>
             <Image
+              loader={imageLoader}
               src="/assets/images/ISMOS/img_3.png"
               alt=""
               quality="100"
@@ -90,6 +93,7 @@ export default function Page() {
 
           <div className="col_about">
             <Image
+              loader={imageLoader}
               src="/assets/images/ISMOS/img_4.png"
               alt=""
               quality="100"
@@ -118,8 +122,8 @@ export default function Page() {
 
           <div className="col_outstanding">
             <div className="bg-[#F2FBF5]">
-              
               <Image
+                loader={imageLoader}
                 src="/assets/images/ISMOS/img_6.png"
                 alt="Home"
                 quality="100"
@@ -127,7 +131,7 @@ export default function Page() {
                 height={0}
                 className="img_outstanding"
               />
-              
+
               <p className="p_outstanding_1">
                 TRẢI NGHIỆM BÁN LẺ HOÀN TOÀN MỚI
               </p>
@@ -144,6 +148,7 @@ export default function Page() {
 
             <div className="bg-[#F2F8FE]">
               <Image
+                loader={imageLoader}
                 src="/assets/images/ISMOS/img_7.png"
                 alt="Home"
                 quality="100"
@@ -164,6 +169,7 @@ export default function Page() {
 
             <div className="bg-[#FFF2F2]">
               <Image
+                loader={imageLoader}
                 src="/assets/images/ISMOS/img_8.png"
                 alt="Home"
                 quality="100"
@@ -192,6 +198,7 @@ export default function Page() {
               </p>
             </div>
             <Image
+              loader={imageLoader}
               src="/assets/images/ISMOS/img_9.png"
               alt="Home"
               quality="100"
@@ -202,7 +209,6 @@ export default function Page() {
           </div>
 
           <Bussiness_Inf />
-
         </div>
       </main>
     </div>

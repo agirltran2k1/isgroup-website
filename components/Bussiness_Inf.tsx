@@ -1,7 +1,7 @@
 import Image from "next/image";
+import { imageLoader } from "../app/utils/ImageLoader";
 
 export default function Page() {
-    
   const menuItems = [
     { id: 1, label: "Cửa hàng hoa", img: "/assets/images/ISMOS/img_10.png" },
     { id: 2, label: "Nhà thuốc", img: "/assets/images/ISMOS/img_11.png" },
@@ -29,6 +29,7 @@ export default function Page() {
             <div key={item.id}>
               {item.img && (
                 <Image
+                  loader={imageLoader}
                   src={item.img}
                   alt="Home"
                   quality="100"
@@ -60,6 +61,7 @@ export default function Page() {
           </p>
         </div>
         <Image
+          loader={imageLoader}
           src="/assets/images/ISMOS/img_20.png"
           alt=""
           quality="100"

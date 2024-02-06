@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { imageLoader } from "../app/utils/ImageLoader";
 
 export default function Banner() {
   return (
@@ -7,6 +8,7 @@ export default function Banner() {
       {/*Banner*/}
       <div>
         <Image
+          loader={imageLoader}
           src="/assets/images/banner-ismos.png"
           alt="Home"
           quality="100"
@@ -26,7 +28,6 @@ export default function Banner() {
             <br />
             Hướng đến trải nghiệm mua sắm tuyệt vời và gắn kết.
           </p>
-
         </div>
       </div>
     </div>
