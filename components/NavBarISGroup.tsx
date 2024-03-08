@@ -1,8 +1,8 @@
 "use client"; // This is a client component
 import Link from "next/link";
-import Image from "next/image";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
+import { Image, Button } from "@nextui-org/react";
 
 import React, { useEffect, useState } from "react";
 import { imageLoader } from "../app/utils/ImageLoader";
@@ -18,10 +18,8 @@ export default function NavBar() {
 
   const menuItems = [
     { id: 1, label: "Trang chủ", route: "/" },
-    { id: 2, label: "Sản phẩm", route: "/" },
-    { id: 3, label: "Về chúng tôi", route: "/isgroup/about" },
-    { id: 4, label: "Tuyển dụng", route: "/" },
-    { id: 5, label: "Liên hệ", route: "/" },
+    { id: 2, label: "Sản phẩm", route: "#my_product" },
+    { id: 4, label: "Tuyển dụng", route: "/isgroup/hire" },
     // Add more menu items as needed
   ];
 
@@ -34,7 +32,7 @@ export default function NavBar() {
       <div className="min-1001:hidden block absolute items-center w-full top-16 left-0 right-0 bg-white_color z-50 transition">
         <ul className=" text-black_color">
           {menuItems.map((item) => (
-            <Link key={item.id} href={item.route}>
+            <a key={item.id} href={item.route}>
               <div
                 className={`hover:bg-blue_color_1 hover:bg-opacity-10 px-8 ${
                   selectedItem === item.id ? "active" : ""
@@ -45,7 +43,7 @@ export default function NavBar() {
                   {item.label}
                 </li>
               </div>
-            </Link>
+            </a>
           ))}
         </ul>
       </div>
@@ -67,7 +65,7 @@ export default function NavBar() {
 
   return (
     <div
-      className={`w-full h-20 px-auto bg-white_color ${
+      className={`w-full h-20 px-auto bg-white_color z-20 ${
         scrolling ? "shadow-scroll" : ""
       }`}
     >
@@ -78,7 +76,6 @@ export default function NavBar() {
               loader={imageLoader}
               src="/assets/images/isgroup.png"
               alt="Home"
-              quality="100"
               width={200}
               height={0}
             />
@@ -115,10 +112,7 @@ export default function NavBar() {
               )}
             </button>
           </div>
-
-          <Link href="/" className="use-button">
-            Dùng ngay
-          </Link>
+        
         </div>
       </div>
     </div>

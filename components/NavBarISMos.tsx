@@ -1,8 +1,8 @@
 "use client"; // This is a client component
 import Link from "next/link";
-import Image from "next/image";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
+import { Image, Button } from "@nextui-org/react";
 
 import React, { useEffect, useState } from "react";
 import { imageLoader } from "../app/utils/ImageLoader";
@@ -67,7 +67,7 @@ export default function NavBar() {
 
   return (
     <div
-      className={`w-full h-20 px-auto bg-white_color ${
+      className={`w-full h-20 px-auto bg-white_color z-20 ${
         scrolling ? "shadow-scroll" : ""
       }`}
     >
@@ -78,7 +78,6 @@ export default function NavBar() {
               loader={imageLoader}
               src="/assets/images/ismos.png"
               alt="Home"
-              quality="100"
               width={200}
               height={0}
             />
@@ -103,23 +102,24 @@ export default function NavBar() {
         <div>{isClick && content}</div>
 
         <div className="inline-flex justify-center items-center gap-6">
-          <div>
-            <button
-              className="block min-1001:hidden transtion"
-              onClick={handleToogleNavbar}
-            >
-              {isClick ? (
-                <IoCloseSharp size={32} color="#424242" />
-              ) : (
-                <RiMenu3Fill size={28} color="#424242" />
-              )}
-            </button>
-          </div>
-
-          <Link href="/" className="use-button">
-            Dùng ngay
-          </Link>
+        <div>
+          <button className="block min-1001:hidden transtion" onClick={handleToogleNavbar}>
+            {isClick ? <IoCloseSharp size={32} color="#424242" /> : <RiMenu3Fill size={28} color="#424242" />}
+          </button>
         </div>
+        
+        <div className="w-full text-center sm:text-left hover:transition hover:duration-200">
+          <Button
+            radius="full"
+            size="lg"
+            disableRipple={true}
+            className="font-medium text-base text-blue_color_2 shadow-lg border-1 border-blue_color_2 bg-white_color hover:bg-blue_color_2 hover:text-white_color"
+          >
+            <a href="/">Sử dụng ngay</a>
+          </Button>
+        </div>
+      </div>
+
       </div>
     </div>
   );
