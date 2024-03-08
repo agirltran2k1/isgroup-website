@@ -169,7 +169,7 @@ export default function Page() {
                 >
                   <p className="ql_p_1">{item.step}</p>
                   {isOpenDescription === item.id ? (
-                    <RxChevronUp size={32} color="#424242" />
+                    <RxChevronUp size={28} color="#424242" />
                   ) : (
                     <RxChevronDown size={28} color="#424242" />
                   )}

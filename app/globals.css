@@ -25,7 +25,7 @@
   @media screen and (min-width: 1280px) {
     /*navbarLi*/
     .navbarLi {
-      @apply mx-6 font-medium;
+      @apply mx-6 font-medium text-base;
 
       &:hover {
         @apply cursor-pointer text-blue_color_2 transition border-b-2 border-blue_color_2;
@@ -56,10 +56,10 @@
     }
 
     .col_products div {
-      @apply p-10 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+      @apply p-10 rounded-xl transition ease-in-out delay-150 justify-center items-center;
 
       &:hover {
-        @apply cursor-pointer scale-110 shadow-2xl;
+        @apply cursor-pointer scale-125;
       }
     }
 
@@ -69,14 +69,22 @@
 
     /*About ISGroup*/
     .col_about {
-      @apply h-auto items-center mx-48 py-10 grid grid-cols-3 gap-14;
+      @apply h-auto items-center mx-48 py-10 grid grid-cols-3 gap-16;
     }
-    .p_title {
-      @apply text-blue_color_2 font-bold text-2xl mb-4;
+    .p_title1 {
+      @apply text-blue_color_2 font-medium text-2xl mb-4;
     }
 
-    .p_about {
-      @apply text-black_color;
+    .p_about1 {
+      @apply text-black_color mr-40;
+    }
+
+    .p_title2 {
+      @apply text-blue_color_2 font-medium text-2xl mb-4 ml-40;
+    }
+
+    .p_about2 {
+      @apply text-black_color ml-40;
     }
 
     /*ISMOS*/
@@ -103,7 +111,6 @@
     .img_outstanding {
       @apply w-24 self-center m-auto;
     }
-
 
     .p_outstanding_1 {
       @apply text-center text-base font-bold text-black_color mx-5 mt-5 h-14;
@@ -141,7 +148,6 @@
       @apply text-base mt-2;
     }
 
-
     .col_1 {
       @apply h-auto items-center mx-48 my-10 grid grid-cols-2 gap-14;
     }
@@ -166,7 +172,7 @@
     }
 
     .ql_p_1 {
-      @apply font-medium;
+      @apply font-medium text-black_color;
 
       &:hover {
         @apply text-blue_color_2 cursor-pointer;
@@ -211,14 +217,19 @@
 
     /*Footer*/
     .col_footer {
-      @apply w-full bg-[#4C4C4C] grid grid-cols-4 text-white_color p-10 justify-center items-center;
+      @apply w-full bg-[#4C4C4C] grid grid-cols-3 text-white_color p-10 justify-center items-center;
     }
 
     .col_footer_div_1 {
-      @apply block;
+      @apply block items-center mb-4 gap-3;
     }
 
     .col_footer_div_2 {
+      @apply flex items-center gap-4;
+    }
+
+
+    .col_footer_div_3 {
       @apply flex items-center mb-4 gap-1;
     }
 
@@ -227,6 +238,10 @@
     }
 
     .col_footer_p_2 {
+      @apply font-bold text-lg;
+    }
+
+    .col_footer_p_3 {
       @apply text-base;
     }
   }
@@ -266,10 +281,10 @@
     }
 
     .col_products div {
-      @apply p-5 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+      @apply p-5 rounded-xl transition ease-in-out delay-150 justify-center items-center;
 
       &:hover {
-        @apply cursor-pointer scale-110 shadow-2xl;
+        @apply cursor-pointer scale-110;
       }
     }
 
@@ -279,14 +294,22 @@
 
     /*About ISGroup*/
     .col_about {
-      @apply h-auto items-center mx-20 py-10 grid grid-cols-3 gap-6;
+      @apply h-auto items-center mx-14 py-10 grid grid-cols-3 gap-12;
     }
-    .p_title {
-      @apply text-blue_color_2 font-bold text-2xl mb-4;
+    .p_title1 {
+      @apply text-blue_color_2 font-medium text-2xl mb-4 ml-32;
     }
 
-    .p_about {
-      @apply text-black_color;
+    .p_about1 {
+      @apply text-black_color ml-32;
+    }
+
+    .p_title2 {
+      @apply text-blue_color_2 font-medium text-2xl mb-4 ml-32;
+    }
+
+    .p_about2 {
+      @apply text-black_color ml-32;
     }
 
     /*ISMOS*/
@@ -374,7 +397,7 @@
     }
 
     .ql_p_1 {
-      @apply font-medium;
+      @apply font-medium text-black_color;
 
       &:hover {
         @apply text-blue_color_2 cursor-pointer;
@@ -465,10 +488,10 @@
     }
 
     .col_products div {
-      @apply p-5 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+      @apply p-5 rounded-xl transition ease-in-out delay-150 justify-center items-center;
 
       &:hover {
-        @apply cursor-pointer scale-110 shadow-2xl;
+        @apply cursor-pointer scale-110;
       }
     }
 
@@ -478,15 +501,23 @@
 
     /*About ISGroup*/
     .col_about {
-      @apply h-auto items-center mx-10 py-10 grid grid-cols-3 gap-8;
+      @apply h-auto items-center mx-10 py-10 grid grid-cols-3 gap-16;
     }
 
-    .p_title {
-      @apply text-blue_color_2 font-bold text-xl mb-2;
+    .p_title1 {
+      @apply text-blue_color_2 font-medium text-xl mb-2 ml-14;
     }
 
-    .p_about {
-      @apply text-black_color text-sm;
+    .p_about1 {
+      @apply text-black_color text-sm ml-14;
+    }
+
+    .p_title2 {
+      @apply text-blue_color_2 font-medium text-xl mb-2 ml-14;
+    }
+
+    .p_about2 {
+      @apply text-black_color text-sm ml-14;
     }
 
     /*ISMOS*/
@@ -574,7 +605,7 @@
     }
 
     .ql_p_1 {
-      @apply font-medium;
+      @apply font-medium text-black_color;
 
       &:hover {
         @apply text-blue_color_2 cursor-pointer;
@@ -665,10 +696,10 @@
     }
 
     .col_products div {
-      @apply p-7 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+      @apply p-7 rounded-xl transition ease-in-out delay-150 justify-center items-center;
 
       &:hover {
-        @apply cursor-pointer scale-110 shadow-2xl;
+        @apply cursor-pointer scale-110;
       }
     }
 
@@ -681,11 +712,19 @@
       @apply h-auto items-center mx-14 pt-10 grid grid-cols-3 gap-8;
     }
 
-    .p_title {
-      @apply text-blue_color_2 font-bold text-sm mb-2;
+    .p_title1 {
+      @apply text-blue_color_2 font-medium text-sm mb-1;
     }
 
-    .p_about {
+    .p_about1 {
+      @apply text-black_color text-xs pb-10;
+    }
+
+    .p_title2 {
+      @apply text-blue_color_2 font-medium text-sm mb-1;
+    }
+
+    .p_about2 {
       @apply text-black_color text-xs pb-10;
     }
 
@@ -711,7 +750,7 @@
     }
 
     .img_outstanding {
-      @apply w-20 self-center m-auto
+      @apply w-20 self-center m-auto;
     }
 
     .p_outstanding_1 {
@@ -774,7 +813,7 @@
     }
 
     .ql_p_1 {
-      @apply font-medium;
+      @apply font-medium text-black_color;
 
       &:hover {
         @apply text-blue_color_2 cursor-pointer;
@@ -865,10 +904,10 @@
     }
 
     .col_products div {
-      @apply p-7 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+      @apply p-7 rounded-xl transition ease-in-out delay-150 justify-center items-center;
 
       &:hover {
-        @apply cursor-pointer scale-110 shadow-2xl;
+        @apply cursor-pointer scale-110;
       }
     }
 
@@ -881,11 +920,19 @@
       @apply h-auto items-center mx-7 pt-10;
     }
 
-    .p_title {
+    .p_title1 {
       @apply text-blue_color_2 font-bold text-base mb-2;
     }
 
-    .p_about {
+    .p_about1 {
+      @apply text-black_color text-sm pb-10;
+    }
+
+    .p_title2 {
+      @apply text-blue_color_2 font-bold text-base mb-2;
+    }
+
+    .p_about2 {
       @apply text-black_color text-sm pb-10;
     }
 
@@ -911,7 +958,7 @@
     }
 
     .img_outstanding {
-      @apply w-16 self-center m-auto
+      @apply w-16 self-center m-auto;
     }
 
     .p_outstanding_1 {
@@ -974,7 +1021,7 @@
     }
 
     .ql_p_1 {
-      @apply text-sm font-medium mr-3;
+      @apply text-sm font-medium mr-3 text-black_color;
 
       &:hover {
         @apply text-blue_color_2 cursor-pointer;
@@ -1064,10 +1111,10 @@
     }
 
     .col_products div {
-      @apply p-7 rounded-xl transition ease-in-out delay-150 border-gray_border_color justify-center items-center;
+      @apply p-7 rounded-xl transition ease-in-out delay-150 justify-center items-center;
 
       &:hover {
-        @apply cursor-pointer scale-110 shadow-2xl;
+        @apply cursor-pointer scale-110;
       }
     }
 
@@ -1080,11 +1127,19 @@
       @apply h-auto items-center mx-7 pt-10;
     }
 
-    .p_title {
+    .p_title1 {
       @apply text-blue_color_2 font-bold text-base mb-2;
     }
 
-    .p_about {
+    .p_about1 {
+      @apply text-black_color text-sm pb-10;
+    }
+
+    .p_title2 {
+      @apply text-blue_color_2 font-bold text-base mb-2;
+    }
+
+    .p_about2 {
       @apply text-black_color text-sm pb-10;
     }
 
@@ -1110,7 +1165,7 @@
     }
 
     .img_outstanding {
-      @apply w-16 self-center m-auto
+      @apply w-16 self-center m-auto;
     }
 
     .p_outstanding_1 {
@@ -1173,7 +1228,7 @@
     }
 
     .ql_p_1 {
-      @apply text-sm font-medium mr-3;
+      @apply text-sm font-medium mr-3 text-black_color;
 
       &:hover {
         @apply text-blue_color_2 cursor-pointer;

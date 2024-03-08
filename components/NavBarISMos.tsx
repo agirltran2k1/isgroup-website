@@ -1,8 +1,8 @@
 "use client"; // This is a client component
 import Link from "next/link";
-import Image from "next/image";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
+import { Image, Button } from "@nextui-org/react";
 
 import React, { useEffect, useState } from "react";
 
@@ -63,7 +63,7 @@ const handleToogleNavbar = () => {
 
   return (
     <div
-      className={`w-full h-20 px-auto bg-white_color ${
+      className={`w-full h-20 px-auto bg-white_color z-20 ${
         scrolling ? "shadow-scroll" : ""
       }`}
     >
@@ -73,7 +73,6 @@ const handleToogleNavbar = () => {
             <Image
               src="/assets/images/ismos.png"
               alt="Home"
-              quality="100"
               width={200}
               height={0}
             />
@@ -107,10 +106,16 @@ const handleToogleNavbar = () => {
           </button>
         </div>
         
-
-        <Link href="/" className="use-button">
-          Dùng ngay
-        </Link>
+        <div className="w-full text-center sm:text-left hover:transition hover:duration-200">
+          <Button
+            radius="full"
+            size="lg"
+            disableRipple={true}
+            className="font-medium text-base text-blue_color_2 shadow-lg border-1 border-blue_color_2 bg-white_color hover:bg-blue_color_2 hover:text-white_color"
+          >
+            <a href="/">Sử dụng ngay</a>
+          </Button>
+        </div>
       </div>
 
       </div>
