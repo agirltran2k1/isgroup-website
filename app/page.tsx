@@ -201,6 +201,7 @@ export default function Page() {
             height="150"
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
+            className="w-full h-auto"
           >
             <rect x="0" y="0" width="2500" height="150" fill="#FFFFFF"></rect>
             <path

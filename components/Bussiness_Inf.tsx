@@ -28,9 +28,9 @@ export default function Page() {
         </div>
 
         <section className="text-gray-600 body-font">
-          <div className="px-5 py-24 justify-center w-full flex flex-wrap -m-4 gap-10 lg:gap-20">
+          <div className="px-5 py-24 justify-center w-full flex flex-wrap -m-4 gap-7 lg:gap-20">
             {menuItems.map((item) => (
-              <div className="p-10" key={item.id}>
+              <div className="p-7" key={item.id}>
                 {item.img && (
                   <Image
                     as={NextImage}
@@ -58,6 +58,7 @@ export default function Page() {
           height="150"
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
+          className="w-full h-auto"
         >
           <rect x="0" y="0" width="2500" height="150" fill="#FFFFFF"></rect>
           <path
