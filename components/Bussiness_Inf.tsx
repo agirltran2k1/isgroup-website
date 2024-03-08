@@ -37,7 +37,7 @@ export default function Page() {
                     loader={imageLoader}
                     src={item.img}
                     alt="Home"
-                    width={100}
+                    width={120}
                     height={500}
                   />
                 )}
