@@ -1,18 +1,12 @@
 "use client";
-<<<<<<< HEAD
 import { useState } from "react";
 import NavBar from "@/components/NavBarISGroup";
 import Banner from "@/components/BannerISGroup";
 import Link from "next/link";
 import React from "react";
 import { Image } from "@nextui-org/react";
-=======
-import NavBar from "@/components/NavBarISGroup";
-import Banner from "@/components/BannerISGroup";
-import Link from "next/link";
-import Image from "next/image";
 import { imageLoader } from "./utils/ImageLoader";
->>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
+import NextImage from "next/image";
 
 export default function Page() {
   return (
@@ -34,12 +28,14 @@ export default function Page() {
             </p>
           </div>
 
-<<<<<<< HEAD
           <div className="justify-center flex flex-wrap gap-10 w-full">
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
               <div className="relative h-[234px] w-[320px] overflow-visible">
                 <Image
                   width={320}
+                  height={100}
+                  loader={imageLoader}
+                  as={NextImage}
                   src="/assets/images/cart.png"
                   alt=""
                   className="h-[210px]"
@@ -57,7 +53,10 @@ export default function Page() {
               <Link href="/ismos/">
                 <div className="relative h-[234px] w-[320px] overflow-visible">
                   <Image
+                    as={NextImage}
+                    loader={imageLoader}
                     width={320}
+                    height={100}
                     src="/assets/images/shop_window.png"
                     alt=""
                     className="h-[210px]"
@@ -76,6 +75,9 @@ export default function Page() {
               <div className=" relative h-[234px] w-[320px] overflow-visible">
                 <Image
                   width={320}
+                  as={NextImage}
+                  loader={imageLoader}
+                  height={100}
                   src="/assets/images/delivery.png"
                   alt=""
                   className="h-[210px]"
@@ -93,6 +95,9 @@ export default function Page() {
               <div className="relative h-[234px] overflow-visible">
                 <Image
                   width={320}
+                  as={NextImage}
+                  loader={imageLoader}
+                  height={100}
                   src="/assets/images/cottage.png"
                   alt=""
                   className="h-[210px]"
@@ -140,6 +145,8 @@ export default function Page() {
 
             <div>
               <Image
+                as={NextImage}
+                loader={imageLoader}
                 src="/assets/images/about_banner_1.png"
                 alt=""
                 width={350}
@@ -151,6 +158,8 @@ export default function Page() {
           <div className="flex flex-wrap-reverse w-full justify-center items-center p-10 gap-10">
             <div>
               <Image
+                as={NextImage}
+                loader={imageLoader}
                 src="/assets/images/about_banner_2.png"
                 alt=""
                 width={350}
@@ -216,7 +225,10 @@ export default function Page() {
             id="rate_list"
             className="justify-center flex flex-wrap w-full gap-10 p-10 -mt-10"
           >
-            <div id="rate_box" className="rounded-lg bg-white_color p-10 w-[400px]">
+            <div
+              id="rate_box"
+              className="rounded-lg bg-white_color p-10 w-[400px]"
+            >
               <div className="flex items-center mb-3">
                 <svg
                   className="w-6 h-6 text-warning-300 ms-1"
@@ -270,10 +282,10 @@ export default function Page() {
                   Tuyệt vời
                 </p>
                 <p className="text-gray_blur_color leading-loose text-sm">
-                  "Không chỉ đáp ứng nhu cầu mà còn mang đến những sự đột phá.
+                  Không chỉ đáp ứng nhu cầu mà còn mang đến những sự đột phá.
                   Chính sự chuyên nghiệp, linh hoạt và tận tâm của họ đã giúp
                   chúng tôi có được một trải nghiệm làm việc và hợp tác đáng
-                  nhớ."
+                  nhớ.
                 </p>
                 <p className="text-blue_color_2 leading-loose text-sm font-medium text-right">
                   Nguyễn Thu Trang - Tháng 3,2024
@@ -281,7 +293,10 @@ export default function Page() {
               </div>
             </div>
 
-            <div id="rate_box" className="rounded-lg bg-white_color p-10  w-[400px]">
+            <div
+              id="rate_box"
+              className="rounded-lg bg-white_color p-10  w-[400px]"
+            >
               <div className="flex items-center mb-3">
                 <svg
                   className="w-6 h-6 text-warning-300 ms-1"
@@ -335,11 +350,11 @@ export default function Page() {
                   Tốt lắm
                 </p>
                 <p className="text-gray_blur_color leading-loose text-sm">
-                  "Dịch vụ phát triển mà ISGroup cung cấp thực sự rất ấn tượng.
+                  Dịch vụ phát triển mà ISGroup cung cấp thực sự rất ấn tượng.
                   Họ không chỉ mang đến sản phẩm có chất lượng vượt trội mà còn
                   thể hiện được sự tận tâm, chuyên nghiệp trong từng chi tiết.
                   Tôi hoàn toàn hài lòng với sản phẩm đầu ra và không thể vui
-                  hơn với sự lựa chọn này."
+                  hơn với sự lựa chọn này.
                 </p>
                 <p className="text-blue_color_2 leading-loose text-sm font-medium text-right">
                   Trần Minh Nhân - Tháng 3,2024
@@ -347,7 +362,10 @@ export default function Page() {
               </div>
             </div>
 
-            <div id="rate_box" className="rounded-lg bg-white_color p-10  w-[400px]">
+            <div
+              id="rate_box"
+              className="rounded-lg bg-white_color p-10  w-[400px]"
+            >
               <div className="flex items-center mb-3">
                 <svg
                   className="w-6 h-6 text-warning-300 ms-1"
@@ -401,7 +419,7 @@ export default function Page() {
                   Tôi rất thích
                 </p>
                 <p className="text-gray_blur_color leading-loose text-sm">
-                  "Phần mềm sử dụng rất tốt. Mong các bạn tiếp tục phát triển."
+                  Phần mềm sử dụng rất tốt. Mong các bạn tiếp tục phát triển.
                 </p>
                 <p className="text-blue_color_2 leading-loose text-sm font-medium text-right">
                   Trần Văn Toàn - Tháng 1,2024
@@ -410,70 +428,6 @@ export default function Page() {
             </div>
           </div>
         </section>
-=======
-          <div className="col_products">
-            <div>
-              <Image
-                loader={imageLoader}
-                src="/assets/images/cart.png"
-                alt="Home"
-                quality="100"
-                layout="responsive"
-                width={500}
-                height={500}
-                className="p-10"
-              />
-              <p>Thương mại điện tử</p>
-            </div>
-
-            <div>
-              <Link href="/ismos/">
-                <Image
-                  loader={imageLoader}
-                  src="/assets/images/shop_window.png"
-                  alt="Home"
-                  quality="100"
-                  layout="responsive"
-                  width={500}
-                  height={500}
-                  className="p-10"
-                />
-                <p>
-                  Quản lý gian hàng <br /> & Hỗ trợ bán hàng
-                </p>
-              </Link>
-            </div>
-
-            <div>
-              <Image
-                loader={imageLoader}
-                src="/assets/images/delivery.png"
-                alt="Home"
-                quality="100"
-                layout="responsive"
-                width={500}
-                height={500}
-                className="p-10"
-              />
-              <p>Gọi xe & Giao hàng</p>
-            </div>
-
-            <div>
-              <Image
-                loader={imageLoader}
-                src="/assets/images/cottage.png"
-                alt="Home"
-                quality="100"
-                layout="responsive"
-                width={500}
-                height={500}
-                className="p-10"
-              />
-              <p>Mua bán bất động sản</p>
-            </div>
-          </div>
-        </div>
->>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
       </main>
     </div>
   );

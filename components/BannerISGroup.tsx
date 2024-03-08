@@ -1,12 +1,10 @@
-<<<<<<< HEAD
 import { Image, Button } from "@nextui-org/react";
+import { imageLoader } from "../app/utils/ImageLoader";
+import NextImage from "next/image";
 
 export default function Banner() {
   return (
-    <section
-      id="banner_isgroup"
-      className="flex flex-wrap mb-10 items-center"
-    >
+    <section id="banner_isgroup" className="flex flex-wrap mb-10 items-center">
       <div className="w-full p-10 lg:p-20 lg:w-2/3">
         <span className="text-black_color font-medium text-3xl leading-normal">
           Kiến tạo phần mềm
@@ -44,7 +42,10 @@ export default function Banner() {
 
       <div className="w-full lg:w-1/3">
         <Image
+          as={NextImage}
+          loader={imageLoader}
           width={1000}
+          height={200}
           src="/assets/images/banner-1.png"
           alt=""
           className="h-auto"
@@ -52,41 +53,5 @@ export default function Banner() {
         />
       </div>
     </section>
-=======
-import Image from "next/image";
-import { imageLoader } from "../app/utils/ImageLoader";
-export default function Banner() {
-  return (
-    <div className="w-full bg-white_color">
-      {/*Banner*/}
-      <div>
-        <Image
-          loader={imageLoader}
-          src="/assets/images/banner-isgroup.png"
-          alt="Home"
-          quality="100"
-          layout="responsive"
-          width={1920}
-          height={1080}
-        />
-
-        <div className="text_banner">
-          <p className="p_1">
-            CÔNG TY <br /> CỔ PHẦN ISGROUP
-          </p>
-
-          <p className="p_2">
-            ISGROUP - khởi nghiệp nổi bật trong lĩnh vực phần mềm, được thành
-            lập với tầm nhìn đột phá và đầy tham vọng.
-            <br />
-            Chúng tôi là đơn vị tiên phong trong việc xây dựng một ứng dụng đa
-            nhiệm.
-            <br />
-            Mục tiêu chính là phục vụ cộng đồng.
-          </p>
-        </div>
-      </div>
-    </div>
->>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
   );
 }

@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 import { Image } from "@nextui-org/react";
-=======
-import Image from "next/image";
 import { imageLoader } from "../app/utils/ImageLoader";
->>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
+import NextImage from "next/image";
 
 export default function Page() {
   const menuItems = [
@@ -32,49 +29,51 @@ export default function Page() {
 
         <section className="text-gray-600 body-font">
           <div className="px-5 py-24 justify-center w-full flex flex-wrap -m-4 gap-10 lg:gap-20">
-          {menuItems.map((item) => (
-            <div className="p-10" key={item.id}>
-              {item.img && (
-                
-                <Image
-                  loader={imageLoader}
-                  src={item.img}
-                  alt="Home"
-                  width={100}
-                  height={500}
-                />
-                
-              )}
-              <p className="text-center text-black_color leading-loose mt-3">{item.label}</p>
-            </div>
-          ))}
+            {menuItems.map((item) => (
+              <div className="p-10" key={item.id}>
+                {item.img && (
+                  <Image
+                    as={NextImage}
+                    loader={imageLoader}
+                    src={item.img}
+                    alt="Home"
+                    width={100}
+                    height={500}
+                  />
+                )}
+                <p className="text-center text-black_color leading-loose mt-3">
+                  {item.label}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
       </div>
 
       <div>
-          <svg
-            id="visual"
-            viewBox="0 0 2500 150"
-            width="2500"
-            height="150"
-            xmlns="http://www.w3.org/2000/svg"
-            version="1.1"
-          >
-            <rect x="0" y="0" width="2500" height="150" fill="#FFFFFF"></rect>
-            <path
-              d="M0 41L139 77L278 49L417 86L556 100L694 109L833 71L972 93L1111 69L1250 63L1389 58L1528 38L1667 61L1806 85L1944 53L2083 81L2222 84L2361 82L2500 97L2500 151L2361 151L2222 151L2083 151L1944 151L1806 151L1667 151L1528 151L1389 151L1250 151L1111 151L972 151L833 151L694 151L556 151L417 151L278 151L139 151L0 151Z"
-              fill="#f5f5f5"
-              stroke-linecap="square"
-              stroke-linejoin="bevel"
-            ></path>
-          </svg>
-        </div>
-<<<<<<< HEAD
+        <svg
+          id="visual"
+          viewBox="0 0 2500 150"
+          width="2500"
+          height="150"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+        >
+          <rect x="0" y="0" width="2500" height="150" fill="#FFFFFF"></rect>
+          <path
+            d="M0 41L139 77L278 49L417 86L556 100L694 109L833 71L972 93L1111 69L1250 63L1389 58L1528 38L1667 61L1806 85L1944 53L2083 81L2222 84L2361 82L2500 97L2500 151L2361 151L2222 151L2083 151L1944 151L1806 151L1667 151L1528 151L1389 151L1250 151L1111 151L972 151L833 151L694 151L556 151L417 151L278 151L139 151L0 151Z"
+            fill="#f5f5f5"
+            stroke-linecap="square"
+            stroke-linejoin="bevel"
+          ></path>
+        </svg>
+      </div>
       <section id="about" className="justify-center p-20 bg-foreground-100">
         <div className="flex flex-wrap w-full justify-center items-center p-10 gap-10">
           <div className="w-full lg:w-1/2 ">
-            <p className="text-black_color text-3xl font-medium">Trực tuyến hay Ngoại tuyến?</p>
+            <p className="text-black_color text-3xl font-medium">
+              Trực tuyến hay Ngoại tuyến?
+            </p>
 
             <div className="flex gap-1 mt-2 mb-5">
               <div className="h-1 w-3 bg-danger-500" />
@@ -95,6 +94,8 @@ export default function Page() {
 
           <div>
             <Image
+              loader={imageLoader}
+              as={NextImage}
               src="/assets/images/ISMOS/img_20.png"
               alt=""
               width={350}
@@ -103,19 +104,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
-=======
-        <Image
-          loader={imageLoader}
-          src="/assets/images/ISMOS/img_20.png"
-          alt=""
-          quality="100"
-          layout="responsive"
-          width={600}
-          height={200}
-        />
-      </div>
->>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
     </div>
   );
 }
