@@ -6,6 +6,7 @@ import { Image, Button } from "@nextui-org/react";
 
 import React, { useEffect, useState } from "react";
 import { imageLoader } from "../app/utils/ImageLoader";
+import NextImage from "next/image";
 
 export default function NavBar() {
   const [scrolling, setScrolling] = useState(false);
@@ -73,6 +74,7 @@ export default function NavBar() {
         <Link href="/">
           <div className="w-8/12">
             <Image
+              as={NextImage}
               loader={imageLoader}
               src="/assets/images/isgroup.png"
               alt="Home"
@@ -112,7 +114,6 @@ export default function NavBar() {
               )}
             </button>
           </div>
-        
         </div>
       </div>
     </div>

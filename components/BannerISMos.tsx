@@ -1,5 +1,6 @@
 import { Image, Button } from "@nextui-org/react";
 import { imageLoader } from "../app/utils/ImageLoader";
+import NextImage from "next/image";
 
 export default function Banner() {
   return (
@@ -37,7 +38,10 @@ export default function Banner() {
 
       <div className="w-full lg:w-1/3">
         <Image
+          as={NextImage}
+          loader={imageLoader}
           width={1000}
+          height={200}
           src="/assets/images/banner-2.png"
           alt=""
           className="h-auto z-0"

@@ -1,6 +1,7 @@
 "use client"; // This is a client component
 import { Image, Button } from "@nextui-org/react";
 import { imageLoader } from "../app/utils/ImageLoader";
+import NextImage from "next/image";
 
 export default function Footer() {
   return (
@@ -12,10 +13,12 @@ export default function Footer() {
         <div className="w-full md:w-2/4">
           <div className="-mt-10">
             <Image
+              loader={imageLoader}
+              as={NextImage}
               src="/assets/images/isgroup.png"
               alt="Home"
               width={120}
-              height={0}
+              height={100}
             />
           </div>
           <p className="-mt-5 mb-3 leading-loose">
@@ -35,6 +38,8 @@ export default function Footer() {
             <p className="text-black_color">Tải ứng dụng tại đây</p>
             <div className="w-full flex flex-wrap items-center">
               <Image
+                loader={imageLoader}
+                as={NextImage}
                 src="/assets/images/ic_download_appstore.png"
                 alt=""
                 width={120}
@@ -42,6 +47,8 @@ export default function Footer() {
                 className="hover: cursor-pointer"
               />
               <Image
+                loader={imageLoader}
+                as={NextImage}
                 src="/assets/images/ic_download_googleplay.png"
                 alt=""
                 width={160}
@@ -49,6 +56,8 @@ export default function Footer() {
                 className="hover: cursor-pointer"
               />
               <Image
+                loader={imageLoader}
+                as={NextImage}
                 src="/assets/images/ic_download_apk.png"
                 alt=""
                 width={130}
@@ -68,16 +77,17 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center justify-center">
-          <input
-            type="email"
-            placeholder="join@example.com"
-            className="p-3 mt-1 block w-full rounded-s-md bg-foreground-100 border-none focus:border-gray-500 focus:bg-white focus:ring-0"
-          ></input>
-          <Button
-          disableRipple={true}
-          className="py-6 px-10 mt-1 font-medium text-base text-white_color bg-blue_color_2 rounded-none rounded-e-md">
-            Tham gia
-          </Button>
+            <input
+              type="email"
+              placeholder="join@example.com"
+              className="p-3 mt-1 block w-full rounded-s-md bg-foreground-100 border-none focus:border-gray-500 focus:bg-white focus:ring-0"
+            ></input>
+            <Button
+              disableRipple={true}
+              className="py-6 px-10 mt-1 font-medium text-base text-white_color bg-blue_color_2 rounded-none rounded-e-md"
+            >
+              Tham gia
+            </Button>
           </div>
         </div>
       </div>

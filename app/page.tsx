@@ -6,6 +6,7 @@ import Link from "next/link";
 import React from "react";
 import { Image } from "@nextui-org/react";
 import { imageLoader } from "./utils/ImageLoader";
+import NextImage from "next/image";
 
 export default function Page() {
   return (
@@ -32,7 +33,9 @@ export default function Page() {
               <div className="relative h-[234px] w-[320px] overflow-visible">
                 <Image
                   width={320}
+                  height={100}
                   loader={imageLoader}
+                  as={NextImage}
                   src="/assets/images/cart.png"
                   alt=""
                   className="h-[210px]"
@@ -50,8 +53,10 @@ export default function Page() {
               <Link href="/ismos/">
                 <div className="relative h-[234px] w-[320px] overflow-visible">
                   <Image
+                    as={NextImage}
                     loader={imageLoader}
                     width={320}
+                    height={100}
                     src="/assets/images/shop_window.png"
                     alt=""
                     className="h-[210px]"
@@ -70,6 +75,9 @@ export default function Page() {
               <div className=" relative h-[234px] w-[320px] overflow-visible">
                 <Image
                   width={320}
+                  as={NextImage}
+                  loader={imageLoader}
+                  height={100}
                   src="/assets/images/delivery.png"
                   alt=""
                   className="h-[210px]"
@@ -87,6 +95,9 @@ export default function Page() {
               <div className="relative h-[234px] overflow-visible">
                 <Image
                   width={320}
+                  as={NextImage}
+                  loader={imageLoader}
+                  height={100}
                   src="/assets/images/cottage.png"
                   alt=""
                   className="h-[210px]"
@@ -134,6 +145,7 @@ export default function Page() {
 
             <div>
               <Image
+                as={NextImage}
                 loader={imageLoader}
                 src="/assets/images/about_banner_1.png"
                 alt=""
@@ -146,6 +158,7 @@ export default function Page() {
           <div className="flex flex-wrap-reverse w-full justify-center items-center p-10 gap-10">
             <div>
               <Image
+                as={NextImage}
                 loader={imageLoader}
                 src="/assets/images/about_banner_2.png"
                 alt=""
@@ -269,10 +282,10 @@ export default function Page() {
                   Tuyệt vời
                 </p>
                 <p className="text-gray_blur_color leading-loose text-sm">
-                  "Không chỉ đáp ứng nhu cầu mà còn mang đến những sự đột phá.
+                  Không chỉ đáp ứng nhu cầu mà còn mang đến những sự đột phá.
                   Chính sự chuyên nghiệp, linh hoạt và tận tâm của họ đã giúp
                   chúng tôi có được một trải nghiệm làm việc và hợp tác đáng
-                  nhớ."
+                  nhớ.
                 </p>
                 <p className="text-blue_color_2 leading-loose text-sm font-medium text-right">
                   Nguyễn Thu Trang - Tháng 3,2024
@@ -337,11 +350,11 @@ export default function Page() {
                   Tốt lắm
                 </p>
                 <p className="text-gray_blur_color leading-loose text-sm">
-                  "Dịch vụ phát triển mà ISGroup cung cấp thực sự rất ấn tượng.
+                  Dịch vụ phát triển mà ISGroup cung cấp thực sự rất ấn tượng.
                   Họ không chỉ mang đến sản phẩm có chất lượng vượt trội mà còn
                   thể hiện được sự tận tâm, chuyên nghiệp trong từng chi tiết.
                   Tôi hoàn toàn hài lòng với sản phẩm đầu ra và không thể vui
-                  hơn với sự lựa chọn này."
+                  hơn với sự lựa chọn này.
                 </p>
                 <p className="text-blue_color_2 leading-loose text-sm font-medium text-right">
                   Trần Minh Nhân - Tháng 3,2024
@@ -406,7 +419,7 @@ export default function Page() {
                   Tôi rất thích
                 </p>
                 <p className="text-gray_blur_color leading-loose text-sm">
-                  "Phần mềm sử dụng rất tốt. Mong các bạn tiếp tục phát triển."
+                  Phần mềm sử dụng rất tốt. Mong các bạn tiếp tục phát triển.
                 </p>
                 <p className="text-blue_color_2 leading-loose text-sm font-medium text-right">
                   Trần Văn Toàn - Tháng 1,2024

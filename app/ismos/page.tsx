@@ -4,6 +4,7 @@ import Bussiness_Inf from "@/components/Bussiness_Inf";
 import Link from "next/link";
 import { Image, Button } from "@nextui-org/react";
 import { imageLoader } from "../utils/ImageLoader";
+import NextImage from "next/image";
 
 export default function Page() {
   return (
@@ -29,9 +30,12 @@ export default function Page() {
             <div className="container px-20 py-24 mx-auto">
               <div className="w-full flex items-center lg:flex-row border-b pb-10 mb-10 border-foreground-200 flex-col lg:gap-24">
                 <Image
+                  as={NextImage}
+                  loader={imageLoader}
                   src="/assets/images/ISMOS/img_1.png"
                   alt=""
                   width={300}
+                  height={100}
                   className="h-auto"
                 />
                 <div className="lg:text-left text-center mt-6 sm:mt-0 lg:w-4/5">
@@ -63,7 +67,7 @@ export default function Page() {
                     ECOM - Bán hàng trên sàn TMĐT
                   </p>
                   <p className="leading-loose text-base">
-                  • ISMOS đem đến giải pháp quản lý bán hàng dễ dàng & hiệu
+                    • ISMOS đem đến giải pháp quản lý bán hàng dễ dàng & hiệu
                     quả trên các sàn TMĐT.
                     <br />• Quản lý tập trung nhiều gian hàng trên một giao
                     diện, tự động đồng bộ tồn kho - giá bán, tiết kiệm thời
@@ -77,7 +81,7 @@ export default function Page() {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      class="w-4 h-4 ml-2"
+                      className="w-4 h-4 ml-2"
                       viewBox="0 0 24 24"
                     >
                       <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -85,17 +89,23 @@ export default function Page() {
                   </a>
                 </div>
                 <Image
+                  as={NextImage}
+                  loader={imageLoader}
                   src="/assets/images/ISMOS/img_2.png"
                   alt=""
                   width={300}
                   className="h-auto"
+                  height={100}
                 />
               </div>
               <div className="w-full flex items-center lg:flex-row border-b pb-10 mb-10 border-foreground-200 flex-col lg:gap-24">
                 <Image
+                  as={NextImage}
+                  loader={imageLoader}
                   src="/assets/images/ISMOS/img_3.png"
                   alt=""
                   width={300}
+                  height={100}
                   className="h-auto"
                 />
                 <div className="lg:text-left text-center mt-6 sm:mt-0 lg:w-4/5">
@@ -103,7 +113,7 @@ export default function Page() {
                     SHIPPING - Cổng vận chuyển, thu hộ COD toàn quốc
                   </p>
                   <p className="leading-loose text-base">
-                  • Tích hợp với hầu hết các hãng vận chuyển trên thị trường
+                    • Tích hợp với hầu hết các hãng vận chuyển trên thị trường
                     như Giaohangnhanh, ViettelPost, VNPT Post, J&T…
                     <br />• Chúng tôi mang lại cho khách hàng một dịch vụ thuận
                     tiện và chi phí vô cùng tiết kiệm với nhiều chính sách ưu
@@ -142,7 +152,7 @@ export default function Page() {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      class="w-4 h-4 ml-2"
+                      className="w-4 h-4 ml-2"
                       viewBox="0 0 24 24"
                     >
                       <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -150,9 +160,12 @@ export default function Page() {
                   </a>
                 </div>
                 <Image
+                  as={NextImage}
+                  loader={imageLoader}
                   src="/assets/images/ISMOS/img_4.png"
                   alt=""
                   width={300}
+                  height={100}
                   className="h-auto"
                 />
               </div>
@@ -170,8 +183,10 @@ export default function Page() {
               <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
                 <div className="relative overflow-visible w-[320px]">
                   <Image
-                loader={imageLoader}
+                    as={NextImage}
+                    loader={imageLoader}
                     width={320}
+                    height={100}
                     src="/assets/images/ISMOS/img_6.png"
                     alt=""
                     className="h-auto"
@@ -194,9 +209,11 @@ export default function Page() {
               <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
                 <div className="relative overflow-visible w-[320px]">
                   <Image
+                    as={NextImage}
                     width={320}
+                    height={300}
                     loader={imageLoader}
-                src="/assets/images/ISMOS/img_7.png"
+                    src="/assets/images/ISMOS/img_7.png"
                     alt=""
                     className="h-auto"
                     radius="none"
@@ -217,7 +234,10 @@ export default function Page() {
               <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
                 <div className="relative overflow-visible w-[320px]">
                   <Image
+                    as={NextImage}
+                    loader={imageLoader}
                     width={320}
+                    height={300}
                     src="/assets/images/ISMOS/img_8.png"
                     alt=""
                     className="h-auto"
@@ -248,6 +268,7 @@ export default function Page() {
               </p>
             </div>
             <Image
+              as={NextImage}
               loader={imageLoader}
               src="/assets/images/ISMOS/img_9.png"
               alt="Home"

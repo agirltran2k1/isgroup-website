@@ -3,7 +3,7 @@ import Link from "next/link";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
 import { Image, Button } from "@nextui-org/react";
-
+import NextImage from 'next/image'
 import React, { useEffect, useState } from "react";
 import { imageLoader } from "../app/utils/ImageLoader";
 
@@ -75,6 +75,7 @@ export default function NavBar() {
         <Link href="/ismos">
           <div className="w-8/12">
             <Image
+              as={NextImage}
               loader={imageLoader}
               src="/assets/images/ismos.png"
               alt="Home"
@@ -115,7 +116,7 @@ export default function NavBar() {
             disableRipple={true}
             className="font-medium text-base text-blue_color_2 shadow-lg border-1 border-blue_color_2 bg-white_color hover:bg-blue_color_2 hover:text-white_color"
           >
-            <a href="/">Sử dụng ngay</a>
+            <a href="https://mos.giaiphap.xyz">Sử dụng ngay</a>
           </Button>
         </div>
       </div>
