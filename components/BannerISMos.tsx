@@ -31,7 +31,7 @@ export default function Banner() {
             disableRipple={true}
             className="font-medium text-base text-blue_color_2 shadow-lg border-1 border-blue_color_2 bg-white_color hover:bg-blue_color_2 hover:text-white_color"
           >
-            <a href="/ismos">Sử dụng miễn phí ngay</a>
+            <a href="https://mos.giaiphap.xyz">Sử dụng miễn phí ngay</a>
           </Button>
         </div>
       </div>
