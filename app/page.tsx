@@ -1,10 +1,18 @@
 "use client";
+<<<<<<< HEAD
 import { useState } from "react";
 import NavBar from "@/components/NavBarISGroup";
 import Banner from "@/components/BannerISGroup";
 import Link from "next/link";
 import React from "react";
 import { Image } from "@nextui-org/react";
+=======
+import NavBar from "@/components/NavBarISGroup";
+import Banner from "@/components/BannerISGroup";
+import Link from "next/link";
+import Image from "next/image";
+import { imageLoader } from "./utils/ImageLoader";
+>>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
 
 export default function Page() {
   return (
@@ -26,6 +34,7 @@ export default function Page() {
             </p>
           </div>
 
+<<<<<<< HEAD
           <div className="justify-center flex flex-wrap gap-10 w-full">
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
               <div className="relative h-[234px] w-[320px] overflow-visible">
@@ -401,6 +410,70 @@ export default function Page() {
             </div>
           </div>
         </section>
+=======
+          <div className="col_products">
+            <div>
+              <Image
+                loader={imageLoader}
+                src="/assets/images/cart.png"
+                alt="Home"
+                quality="100"
+                layout="responsive"
+                width={500}
+                height={500}
+                className="p-10"
+              />
+              <p>Thương mại điện tử</p>
+            </div>
+
+            <div>
+              <Link href="/ismos/">
+                <Image
+                  loader={imageLoader}
+                  src="/assets/images/shop_window.png"
+                  alt="Home"
+                  quality="100"
+                  layout="responsive"
+                  width={500}
+                  height={500}
+                  className="p-10"
+                />
+                <p>
+                  Quản lý gian hàng <br /> & Hỗ trợ bán hàng
+                </p>
+              </Link>
+            </div>
+
+            <div>
+              <Image
+                loader={imageLoader}
+                src="/assets/images/delivery.png"
+                alt="Home"
+                quality="100"
+                layout="responsive"
+                width={500}
+                height={500}
+                className="p-10"
+              />
+              <p>Gọi xe & Giao hàng</p>
+            </div>
+
+            <div>
+              <Image
+                loader={imageLoader}
+                src="/assets/images/cottage.png"
+                alt="Home"
+                quality="100"
+                layout="responsive"
+                width={500}
+                height={500}
+                className="p-10"
+              />
+              <p>Mua bán bất động sản</p>
+            </div>
+          </div>
+        </div>
+>>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
       </main>
     </div>
   );

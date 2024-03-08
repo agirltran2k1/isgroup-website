@@ -5,6 +5,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { Image, Button } from "@nextui-org/react";
 
 import React, { useEffect, useState } from "react";
+import { imageLoader } from "../app/utils/ImageLoader";
 
 export default function NavBar() {
   const [scrolling, setScrolling] = useState(false);
@@ -31,7 +32,11 @@ export default function NavBar() {
       <div className="min-1001:hidden block absolute items-center w-full top-16 left-0 right-0 bg-white_color z-50 transition">
         <ul className=" text-black_color">
           {menuItems.map((item) => (
+<<<<<<< HEAD
             <a key={item.id} href={item.route}>
+=======
+            <Link key={item.id} href={item.route}>
+>>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
               <div
                 className={`hover:bg-blue_color_1 hover:bg-opacity-10 px-8 ${
                   selectedItem === item.id ? "active" : ""
@@ -42,7 +47,11 @@ export default function NavBar() {
                   {item.label}
                 </li>
               </div>
+<<<<<<< HEAD
             </a>
+=======
+            </Link>
+>>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
           ))}
         </ul>
       </div>
@@ -72,6 +81,7 @@ export default function NavBar() {
         <Link href="/">
           <div className="w-8/12">
             <Image
+              loader={imageLoader}
               src="/assets/images/isgroup.png"
               alt="Home"
               width={200}
@@ -110,7 +120,14 @@ export default function NavBar() {
               )}
             </button>
           </div>
+<<<<<<< HEAD
         
+=======
+
+          <Link href="/" className="use-button">
+            Dùng ngay
+          </Link>
+>>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
         </div>
       </div>
     </div>

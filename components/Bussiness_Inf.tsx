@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { Image } from "@nextui-org/react";
+=======
+import Image from "next/image";
+import { imageLoader } from "../app/utils/ImageLoader";
+>>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
 
 export default function Page() {
   const menuItems = [
@@ -32,6 +37,7 @@ export default function Page() {
               {item.img && (
                 
                 <Image
+                  loader={imageLoader}
                   src={item.img}
                   alt="Home"
                   width={100}
@@ -64,6 +70,7 @@ export default function Page() {
             ></path>
           </svg>
         </div>
+<<<<<<< HEAD
       <section id="about" className="justify-center p-20 bg-foreground-100">
         <div className="flex flex-wrap w-full justify-center items-center p-10 gap-10">
           <div className="w-full lg:w-1/2 ">
@@ -97,6 +104,18 @@ export default function Page() {
         </div>
       </section>
 
+=======
+        <Image
+          loader={imageLoader}
+          src="/assets/images/ISMOS/img_20.png"
+          alt=""
+          quality="100"
+          layout="responsive"
+          width={600}
+          height={200}
+        />
+      </div>
+>>>>>>> 0feb511ea80beb29f2c6e61c1d6645925bc4e012
     </div>
   );
 }

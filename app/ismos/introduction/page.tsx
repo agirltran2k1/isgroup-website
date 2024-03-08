@@ -2,6 +2,7 @@
 import NavBar from "@/components/NavBarISMos";
 import Bussiness_Inf from "@/components/Bussiness_Inf";
 import Image from "next/image";
+import { imageLoader } from "@/app/utils/ImageLoader";
 
 export default function Page() {
   return (
@@ -26,6 +27,7 @@ export default function Page() {
             </p>
           </div>
           <Image
+            loader={imageLoader}
             src="/assets/images/ISMOS/img_21.png"
             alt=""
             quality="100"
@@ -37,6 +39,7 @@ export default function Page() {
 
         <div className="col_about">
           <Image
+            loader={imageLoader}
             src="/assets/images/ISMOS/img_5.png"
             alt=""
             quality="100"
@@ -58,6 +61,7 @@ export default function Page() {
 
         <div>
           <Image
+            loader={imageLoader}
             src="/assets/images/ISMOS/img_22.png"
             alt="Home"
             quality="100"

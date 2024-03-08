@@ -7,6 +7,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import { RxChevronUp } from "react-icons/rx";
+import { imageLoader } from "@/app/utils/ImageLoader";
 
 export default function Page() {
   const menuItems = [
@@ -67,6 +68,7 @@ export default function Page() {
         </div>
 
         <Image
+          loader={imageLoader}
           src="/assets/images/ISMOS/img_25.png"
           alt="Home"
           quality="100"
@@ -84,9 +86,7 @@ export default function Page() {
 
         <div className="col_welcome">
           <div className="grid place-items-center bg-[#F2FBF5]">
-            <p className="p_welcome_1">
-              TỔNG QUAN ISMOS
-            </p>
+            <p className="p_welcome_1">TỔNG QUAN ISMOS</p>
             <p className="p_welcome_2">
               Chào mừng bạn đến với ISMOS! Dù cho bạn là người mới kinh doanh
               hay đã là một người với nhiều kinh nghiệm trong lĩnh vực này,
@@ -96,9 +96,7 @@ export default function Page() {
           </div>
 
           <div className="bg-[#F2F8FE]">
-            <p className="p_welcome_1">
-              TÀI KHOẢN ISMOS
-            </p>
+            <p className="p_welcome_1">TÀI KHOẢN ISMOS</p>
             <p className="p_welcome_2 text-center">
               ISMOS có 2 loại tài khoản chính với những phân quyền khác nhau:
               Tài khoản chủ doanh nghiệp và tài khoản nhân viên. Tài khoản chủ
@@ -132,6 +130,7 @@ export default function Page() {
               <div className="setup_list" key={item.id}>
                 {item.img && (
                   <Image
+                    loader={imageLoader}
                     src={item.img}
                     alt="Home"
                     quality="100"
@@ -151,14 +150,15 @@ export default function Page() {
 
         <div className="col_setup_1">
           <div className="bg-[#FFF9F2]">
-              <Image
-                src="/assets/images/ISMOS/img_32.png"
-                alt="Home"
-                quality="100"
-                width={400}
-                height={0}
-                className="p-10"
-              />
+            <Image
+              loader={imageLoader}
+              src="/assets/images/ISMOS/img_32.png"
+              alt="Home"
+              quality="100"
+              width={400}
+              height={0}
+              className="p-10"
+            />
             <p className="p_col_setup_1">
               13 BƯỚC SỬ DỤNG ISMOS DÀNH CHO MỘT GIAN HÀNG
             </p>
@@ -180,6 +180,7 @@ export default function Page() {
           <div className="bg-[#F2FBF5]">
             <div>
               <Image
+                loader={imageLoader}
                 src="/assets/images/ISMOS/img_33.png"
                 alt="Home"
                 quality="100"
@@ -197,8 +198,11 @@ export default function Page() {
               bước thiết lập dưới đây sẽ giúp bạn bắt đầu sử dụng ISMOS một cách
               nhanh chóng và tận dụng được sức mạnh từ chuỗi cửa hàng.
             </p>
-            <Link href="/ismos/instruction/14_step" className="detail-button bg-[#CCF0D8] text-[#006D25] hover:bg-[#006D25] hover:text-[#CCF0D8]">
-             Xem chi tiết
+            <Link
+              href="/ismos/instruction/14_step"
+              className="detail-button bg-[#CCF0D8] text-[#006D25] hover:bg-[#006D25] hover:text-[#CCF0D8]"
+            >
+              Xem chi tiết
             </Link>
           </div>
         </div>

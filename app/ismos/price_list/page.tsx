@@ -7,6 +7,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import { RxChevronUp } from "react-icons/rx";
+import { imageLoader } from "@/app/utils/ImageLoader";
 
 export default function Page() {
   const menuItems = [
@@ -74,6 +75,7 @@ export default function Page() {
             </p>
           </div>
           <Image
+            loader={imageLoader}
             src="/assets/images/ISMOS/img_23.png"
             alt=""
             quality="100"
@@ -85,6 +87,7 @@ export default function Page() {
 
         <div className="col_1">
           <Image
+            loader={imageLoader}
             src="/assets/images/ISMOS/img_24.png"
             alt=""
             quality="100"

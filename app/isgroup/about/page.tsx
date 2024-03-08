@@ -1,6 +1,7 @@
 import NavBar from "@/components/NavBarISGroup";
 import Link from "next/link";
 import Image from "next/image";
+import { imageLoader } from "@/app/utils/ImageLoader";
 
 export default function Page() {
   return (
@@ -37,6 +38,7 @@ export default function Page() {
             </p>
           </div>
           <Image
+            loader={imageLoader}
             src="/assets/images/about_banner_1.png"
             alt=""
             quality="100"
@@ -48,6 +50,7 @@ export default function Page() {
 
         <div className="col_about">
           <Image
+            loader={imageLoader}
             src="/assets/images/about_banner_2.png"
             alt=""
             quality="100"
