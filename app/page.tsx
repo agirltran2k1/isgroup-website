@@ -72,6 +72,7 @@ export default function Page() {
             </div>
 
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
+              <Link href="/ismove/">
               <div className=" relative h-[234px] w-[320px] overflow-visible">
                 <Image
                   width={320}
@@ -89,6 +90,7 @@ export default function Page() {
                   Gọi xe - Giao hàng
                 </p>
               </div>
+              </Link>
             </div>
 
             <div className="w-[300px] flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">

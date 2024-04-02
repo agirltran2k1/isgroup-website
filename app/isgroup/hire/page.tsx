@@ -1,23 +1,9 @@
 "use client";
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Image,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  useDisclosure,
-} from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 import NavBar from "@/components/NavBarISGroup";
 
 export default function Page() {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
   return (
     <div className="w-full bg-white_color">
       <header>
@@ -34,130 +20,6 @@ export default function Page() {
             className="m-10"
           />
         </div>
-
-        {/*Box tuyển dụng*/}
-        {/*<div className="justify-center flex flex-wrap gap-10">
-          <Card className="py-4">
-            <CardHeader classNameName="pb-0 pt-2 px-4 flex-col items-start">
-              <p classNameName="text-tiny uppercase font-bold">Tuyển dụng</p>
-              <small classNameName="text-default-500">1 Nhân viên chính thức</small>
-              <h4 classNameName="font-bold text-large">Lập trình viên</h4>
-            </CardHeader>
-            <CardBody classNameName="overflow-visible py-2">
-              <Button
-                onPress={onOpen}
-                color="primary"
-                variant="light"
-                classNameName="mx-16 my-5"
-              >
-                Xem chi tiết
-              </Button>
-              <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-                <ModalContent>
-                  {(onClose) => (
-                    <>
-                      <ModalHeader classNameName="flex flex-col gap-1">
-                        Thông tin tuyển dụng
-                      </ModalHeader>
-                      <ModalBody>
-                        <p>Đang cập nhật</p>
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button variant="light" onPress={onClose}>
-                          Đóng
-                        </Button>
-                        <Button color="primary" onPress={onClose}>
-                          Ứng tuyển
-                        </Button>
-                      </ModalFooter>
-                    </>
-                  )}
-                </ModalContent>
-              </Modal>
-            </CardBody>
-          </Card>
-
-          <Card className="py-4">
-            <CardHeader classNameName="pb-0 pt-2 px-4 flex-col items-start">
-              <p classNameName="text-tiny uppercase font-bold">Tuyển dụng</p>
-              <small classNameName="text-default-500">1 Nhân viên chính thức</small>
-              <h4 classNameName="font-bold text-large">Content & Marketing</h4>
-            </CardHeader>
-            <CardBody classNameName="overflow-visible py-2">
-              <Button
-                onPress={onOpen}
-                color="primary"
-                variant="light"
-                classNameName="mx-16 my-5"
-              >
-                Xem chi tiết
-              </Button>
-              <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-                <ModalContent>
-                  {(onClose) => (
-                    <>
-                      <ModalHeader classNameName="flex flex-col gap-1">
-                        Thông tin tuyển dụng
-                      </ModalHeader>
-                      <ModalBody>
-                        <p>Đang cập nhật</p>
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button variant="light" onPress={onClose}>
-                          Đóng
-                        </Button>
-                        <Button color="primary" onPress={onClose}>
-                          Ứng tuyển
-                        </Button>
-                      </ModalFooter>
-                    </>
-                  )}
-                </ModalContent>
-              </Modal>
-            </CardBody>
-          </Card>
-
-          <Card className="py-4">
-            <CardHeader classNameName="pb-0 pt-2 px-4 flex-col items-start">
-              <p classNameName="text-tiny uppercase font-bold">Tuyển dụng</p>
-              <small classNameName="text-default-500">1 Nhân viên chính thức</small>
-              <h4 classNameName="font-bold text-large">Vị trí khác</h4>
-            </CardHeader>
-            <CardBody classNameName="overflow-visible py-2">
-              <Button
-                onPress={onOpen}
-                color="primary"
-                variant="light"
-                classNameName="mx-16 my-5"
-              >
-                Xem chi tiết
-              </Button>
-              <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-                <ModalContent>
-                  {(onClose) => (
-                    <>
-                      <ModalHeader classNameName="flex flex-col gap-1">
-                        Thông tin tuyển dụng
-                      </ModalHeader>
-                      <ModalBody>
-                        <p>Đang cập nhật</p>
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button variant="light" onPress={onClose}>
-                          Đóng
-                        </Button>
-                        <Button color="primary" onPress={onClose}>
-                          Ứng tuyển
-                        </Button>
-                      </ModalFooter>
-                    </>
-                  )}
-                </ModalContent>
-              </Modal>
-            </CardBody>
-          </Card>
-
-                  </div>*/}
 
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-24 mx-auto">
@@ -226,7 +88,7 @@ export default function Page() {
                     NHÂN VIÊN CHÍNH THỨC
                   </h2>
                   <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
-                    Marketing & Content
+                    Business Analyst
                   </h1>
                   <p className="leading-relaxed mb-3">Đang cập nhật</p>
                   <a className="text-blue_color_2 inline-flex items-center">

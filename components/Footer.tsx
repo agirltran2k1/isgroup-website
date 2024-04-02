@@ -2,6 +2,7 @@
 import { Image, Button } from "@nextui-org/react";
 import { imageLoader } from "../app/utils/ImageLoader";
 import NextImage from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -28,7 +29,7 @@ export default function Footer() {
             đó không hề thay đổi.
           </p>
           <a
-            href="#about"
+            href="/#about"
             className="font-semibold text-black_color hover:underline leading-loose"
           >
             Về chúng tôi →
@@ -36,17 +37,8 @@ export default function Footer() {
 
           <div className="mt-3">
             <p className="text-black_color">Tải ứng dụng tại đây</p>
-            <div className="w-full flex flex-wrap items-center">
-              <Image
-                loader={imageLoader}
-                as={NextImage}
-                src="/assets/images/ic_download_appstore.png"
-                alt=""
-                width={120}
-                height={400}
-                className="hover: cursor-pointer"
-              />
-              <Image
+            <div className="w-full flex flex-wrap items-center gap-3">
+              {/*<Image
                 loader={imageLoader}
                 as={NextImage}
                 src="/assets/images/ic_download_googleplay.png"
@@ -54,16 +46,26 @@ export default function Footer() {
                 width={160}
                 height={400}
                 className="hover: cursor-pointer"
-              />
+  />*/}
+              <Link href="https://play.google.com/store/apps/details?id=com.islink">
+                <Image
+                  src="https://www.svgrepo.com/show/303139/google-play-badge-logo.svg"
+                  width="130"
+                  height="110"
+                  alt=""
+                  className="hover: cursor-pointer -top-8"
+                />
+              </Link>
+
+              <Link href="https://apps.apple.com/vn/app/is-2020/id6472865637">
               <Image
-                loader={imageLoader}
-                as={NextImage}
-                src="/assets/images/ic_download_apk.png"
+                src="https://www.svgrepo.com/show/303128/download-on-the-app-store-apple-logo.svg"
+                width="130"
+                height="110"
                 alt=""
-                width={130}
-                height={400}
-                className="hover: cursor-pointer"
+                className="hover: cursor-pointer -top-8"
               />
+              </Link>
             </div>
           </div>
         </div>

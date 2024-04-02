@@ -3,10 +3,9 @@ import Link from "next/link";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
 import { Image, Button } from "@nextui-org/react";
-
+import NextImage from 'next/image'
 import React, { useEffect, useState } from "react";
 import { imageLoader } from "../app/utils/ImageLoader";
-import NextImage from "next/image";
 
 export default function NavBar() {
   const [scrolling, setScrolling] = useState(false);
@@ -18,9 +17,11 @@ export default function NavBar() {
   };
 
   const menuItems = [
-    { id: 1, label: "Trang chủ", route: "/" },
-    { id: 2, label: "Sản phẩm", route: "/#my_product" },
-    { id: 4, label: "Tuyển dụng", route: "/isgroup/hire" },
+    { id: 1, label: "Trang chủ", route: "/ismove" },
+    { id: 2, label: "Giới thiệu", route: "/ismove/introduction/" },
+    { id: 3, label: "Tài xế", route: "/ismove/driver/" },
+    { id: 4, label: "Khách hàng", route: "/ismove/user/" },
+    { id: 5, label: "Về ISGroup", route: "/" },
     // Add more menu items as needed
   ];
 
@@ -33,7 +34,7 @@ export default function NavBar() {
       <div className="min-1001:hidden block absolute items-center w-full top-16 left-0 right-0 bg-white_color z-50 transition">
         <ul className=" text-black_color">
           {menuItems.map((item) => (
-            <a key={item.id} href={item.route}>
+            <Link key={item.id} href={item.route}>
               <div
                 className={`hover:bg-blue_color_1 hover:bg-opacity-10 px-8 ${
                   selectedItem === item.id ? "active" : ""
@@ -44,7 +45,7 @@ export default function NavBar() {
                   {item.label}
                 </li>
               </div>
-            </a>
+            </Link>
           ))}
         </ul>
       </div>
@@ -71,12 +72,12 @@ export default function NavBar() {
       }`}
     >
       <div className="h-full flex items-center justify-between mx-auto px-4 bg-white_color">
-        <Link href="/">
+        <Link href="/ismove">
           <div className="w-8/12">
             <Image
               as={NextImage}
               loader={imageLoader}
-              src="/assets/images/isgroup.png"
+              src="/assets/images/ismove.png"
               alt="Home"
               width={200}
               height={0}
@@ -102,19 +103,24 @@ export default function NavBar() {
         <div>{isClick && content}</div>
 
         <div className="inline-flex justify-center items-center gap-6">
-          <div>
-            <button
-              className="block min-1001:hidden transtion"
-              onClick={handleToogleNavbar}
-            >
-              {isClick ? (
-                <IoCloseSharp size={32} color="#424242" />
-              ) : (
-                <RiMenu3Fill size={28} color="#424242" />
-              )}
-            </button>
-          </div>
+        <div>
+          <button className="block min-1001:hidden transtion" onClick={handleToogleNavbar}>
+            {isClick ? <IoCloseSharp size={32} color="#424242" /> : <RiMenu3Fill size={28} color="#424242" />}
+          </button>
         </div>
+        
+        {/*<div className="w-full text-center sm:text-left hover:transition hover:duration-200">
+          <Button
+            radius="full"
+            size="lg"
+            disableRipple={true}
+            className="font-medium text-base text-blue_color_2 shadow-lg border-1 border-blue_color_2 bg-white_color hover:bg-blue_color_2 hover:text-white_color"
+          >
+            <a href="https://mos.giaiphap.xyz">Sử dụng ngay</a>
+          </Button>
+            </div>*/}
+      </div>
+
       </div>
     </div>
   );

@@ -3,7 +3,8 @@ import NavBar from "@/components/NavBarISMos";
 import Bussiness_Inf from "@/components/Bussiness_Inf";
 import Banner from "@/components/BannerISMos";
 import Link from "next/link";
-import Image from "next/image";
+import NextImage from "next/image";
+import { Image } from "@nextui-org/react";
 import React, { useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import { RxChevronUp } from "react-icons/rx";
@@ -58,68 +59,83 @@ export default function Page() {
       </header>
 
       <main className="relative bg-[#FDFDFE]">
-        <div className="w-full h-auto bg-blue_color_2 py-5 xl:py-12 lg:py-9 md:py-7 sm:py-5">
-          <p className="p_1 ml-8">Bảng giá</p>
-        </div>
+        <section id="about" className="justify-center p-20">
+          <div className="flex flex-wrap w-full justify-center items-center p-10 gap-10">
+            <div className="w-full lg:w-1/2 ">
+              <p className="text-black_color text-3xl font-medium">
+                Dễ dàng bán hàng Online đa kênh và tăng trưởng khách hàng với
+                các gói giải pháp của ISMOS
+              </p>
 
-        <div className="col_1">
-          <div>
-            <p className="p_title_1">
-              Dễ dàng bán hàng Online đa kênh và tăng trưởng khách hàng với các
-              gói giải pháp của ISMOS
-            </p>
-            <p className="p_about_1">
-              - Bán hàng Online đa Kênh
-              <br />- Chốt đơn, tăng số đơn hàng
-              <br />- Chăm sóc và Bán lại khách hàng
-            </p>
+              <div className="flex gap-1 mt-2 mb-5">
+                <div className="h-1 w-3 bg-secondary-500" />
+                <div className="h-1 w-10 bg-secondary-500" />
+              </div>
+
+              <p className="text-black_color text-base leading-loose">
+                - Bán hàng Online đa Kênh <br />
+                - Chốt đơn, tăng số đơn hàng <br />- Chăm sóc và Bán lại khách
+                hàng
+              </p>
+            </div>
+
+            <div>
+              <Image
+                loader={imageLoader}
+                as={NextImage}
+                src="/assets/images/ISMOS/img_23.png"
+                alt=""
+                width={350}
+                height={200}
+              />
+            </div>
           </div>
-          <Image
-            loader={imageLoader}
-            src="/assets/images/ISMOS/img_23.png"
-            alt=""
-            quality="100"
-            layout="responsive"
-            width={600}
-            height={200}
-          />
-        </div>
 
-        <div className="col_1">
-          <Image
-            loader={imageLoader}
-            src="/assets/images/ISMOS/img_24.png"
-            alt=""
-            quality="100"
-            layout="responsive"
-            width={100}
-            height={200}
-          />
+          <div className="flex flex-wrap-reverse w-full justify-center items-center p-10 gap-10">
+            <div>
+              <Image
+                as={NextImage}
+                loader={imageLoader}
+                src="/assets/images/ISMOS/img_24.png"
+                alt=""
+                width={350}
+                height={200}
+              />
+            </div>
 
-          <div>
-            <p className="p_title_1">ISMOS STANDARD</p>
-            <p className="p_about_1">
-              Dễ dàng quản lý và bán hàng online đa kênh cho người mới khởi
-              nghiệp kinh doanh.
-              <br />
-              <br />- Quản lý hàng hóa Quản lý kho hàng
-              <br />- Quản lý bán lẻ, bán sỉ
-              <br />- Quản lý công nợ, quỹ tiền mặt
-              <br />- Quản lý qua điện thoại
-              <br />- Quản lý Thông báo điều hành
-              <br />- Quản lý châm công
-              <br />- Quản lý khuyến mại tích điểm
-              <br />- Quản lý hoạt động nhân viên
-              <br />- Quản lý chăm sóc khách hàng
-              <br />- Quản lý chuỗi cửa hàng online
-              <br />- Hệ thống báo cáo realtime
-            </p>
+            <div className="w-full lg:w-1/2">
+              <p className="text-black_color text-3xl font-medium">
+                ISMOS STANDARD
+              </p>
+
+              <div className="flex gap-1 mt-2 mb-5">
+                <div className="h-1 w-3 bg-foreground-500" />
+                <div className="h-1 w-10 bg-foreground-500" />
+              </div>
+
+              <p className="text-black_color text-base leading-loose">
+                Dễ dàng quản lý và bán hàng online đa kênh cho người mới khởi
+                nghiệp kinh doanh.
+                <br />
+                <br />- Quản lý hàng hóa Quản lý kho hàng
+                <br />- Quản lý bán lẻ, bán sỉ
+                <br />- Quản lý công nợ, quỹ tiền mặt
+                <br />- Quản lý qua điện thoại
+                <br />- Quản lý Thông báo điều hành
+                <br />- Quản lý châm công
+                <br />- Quản lý khuyến mại tích điểm
+                <br />- Quản lý hoạt động nhân viên
+                <br />- Quản lý chăm sóc khách hàng
+                <br />- Quản lý chuỗi cửa hàng online
+                <br />- Hệ thống báo cáo realtime
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/*CÂU HỎI THƯỜNG GẶP*/}
-        <div className="mt-20">
-          <p className="text-blue_color_2 text-xl font-medium text-center xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl">
+        <div className="-mt-10">
+        <p className="text-black_color text-3xl font-medium text-center pt-10 leading-loose px-10">
             Câu hỏi thường gặp
           </p>
 
@@ -131,9 +147,9 @@ export default function Page() {
                     {item.id}. {item.question}
                   </p>
                   {isOpenAnswer === item.id ? (
-                    <RxChevronUp size={28} color="#424242" />
+                    <RxChevronUp size={28} color="#424242" className="cursor-pointer" />
                   ) : (
-                    <RxChevronDown size={28} color="#424242" />
+                    <RxChevronDown size={28} color="#424242" className="cursor-pointer" />
                   )}
                 </div>
                 {isOpenAnswer === item.id && (

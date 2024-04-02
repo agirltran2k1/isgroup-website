@@ -22,7 +22,7 @@ export default function Page() {
       {/*ISMOS SẴN SÀNG HỖ TRỢ*/}
       <div className="mt-20">
         <div className="-my-10">
-          <p className="text-black_color text-3xl font-medium text-center pt-10 leading-loose">
+          <p className="text-black_color text-3xl font-medium text-center pt-10 leading-loose px-10">
             Chúng tôi thiết kế phần mềm chuyên biệt cho từng ngành hàng
           </p>
         </div>
