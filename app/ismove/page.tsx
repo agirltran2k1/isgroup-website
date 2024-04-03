@@ -246,7 +246,7 @@ export default function Page() {
                 <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
                   <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
                     <h2 className="font-medium title-font text-black_color mb-1 text-large">
-                    Chọn ĐẶT XE để được hệ thống tìm kiếm tài xế gần nhất
+                    Chọn XÁC NHẬN và trải nghiệm sự chuyên nghiệp từ ISGroup
                     </h2>
                   </div>
                 </div>

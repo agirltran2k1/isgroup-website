@@ -98,7 +98,7 @@ export default function Footer() {
         id="footer-2"
         className="bg-blue_color_2 w-full flex text-white_color p-3 justify-center"
       >
-        <p>© 2023 ISGroup 1</p>
+        <p>© 2020 ISGroup</p>
       </div>
     </section>
   );
