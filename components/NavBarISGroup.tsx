@@ -3,7 +3,6 @@ import Link from "next/link";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
 import { Image, Button } from "@nextui-org/react";
-
 import React, { useEffect, useState } from "react";
 import { imageLoader } from "../app/utils/ImageLoader";
 import NextImage from "next/image";
@@ -114,6 +113,7 @@ export default function NavBar() {
               )}
             </button>
           </div>
+
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import Footer from "@/components/Footer";
 import { Providers } from "./providers";
 
+
+
 const myFont = localFont({
   src: [
     {
