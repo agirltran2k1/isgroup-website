@@ -8,8 +8,15 @@ import NextImage from "next/image";
 import { message, Steps, theme, Modal } from "antd";
 import { useRouter } from "next/navigation";
 import { FaCircleCheck } from "react-icons/fa6";
+import {
+  handleChangeObject,
+  isEmail,
+  isPhoneNumberVN,
+  isUsername,
+} from "@/app/utils";
+import Api from "@/public/api";
 
-const Account_Information = () => {
+const Account_Information = ({ data, setData }: any) => {
   return (
     <form
       className="flex flex-col mx-auto"
@@ -20,6 +27,9 @@ const Account_Information = () => {
       <div className="">
         <label className="text-black_color">Số điện thoại</label>
         <input
+          onChange={(text) =>
+            handleChangeObject("phone", text.target.value, setData)
+          }
           type="tel"
           placeholder="Nhập số điện thoại"
           required
@@ -34,6 +44,9 @@ const Account_Information = () => {
       <div className="mt-10">
         <label className="text-black_color">Họ và tên</label>
         <input
+          onChange={(text) =>
+            handleChangeObject("fullname", text.target.value, setData)
+          }
           type="text"
           placeholder="Nhập họ và tên"
           className="w-full p-3 mt-1 block rounded-s-md bg-foreground-100 border-none focus:border-gray-500 focus:bg-white focus:ring-0"
@@ -43,6 +56,9 @@ const Account_Information = () => {
       <div className="mt-10">
         <label className="text-black_color">Email</label>
         <input
+          onChange={(text) =>
+            handleChangeObject("email", text.target.value, setData)
+          }
           type="email"
           placeholder="Nhập email của bạn"
           className="w-full p-3 mt-1 block rounded-s-md bg-foreground-100 border-none focus:border-gray-500 focus:bg-white focus:ring-0"
@@ -52,12 +68,15 @@ const Account_Information = () => {
   );
 };
 
-const Security_Information = () => {
+const Security_Information = ({ data, setData }: any) => {
   return (
     <form className="" method="post" action="#" id="infor_form">
       <div className="">
         <label className="text-black_color">Tên đăng nhập</label>
         <input
+          onChange={(text) =>
+            handleChangeObject("username", text.target.value, setData)
+          }
           type="tel"
           placeholder="Nhập tên đăng nhập"
           required
@@ -69,6 +88,9 @@ const Security_Information = () => {
       <div className="mt-10">
         <label className="text-black_color">Mật khẩu</label>
         <input
+          onChange={(text) =>
+            handleChangeObject("password", text.target.value, setData)
+          }
           type="password"
           placeholder="Nhập mật khẩu"
           className="w-full p-3 mt-1 block rounded-s-md bg-foreground-100 border-none focus:border-gray-500 focus:bg-white focus:ring-0"
@@ -78,6 +100,9 @@ const Security_Information = () => {
       <div className="mt-10">
         <label className="text-black_color">Xác nhận mật khẩu</label>
         <input
+          onChange={(text) =>
+            handleChangeObject("re_password", text.target.value, setData)
+          }
           type="password"
           placeholder="Nhập lại mật khẩu"
           className="w-full p-3 mt-1 block rounded-s-md bg-foreground-100 border-none focus:border-gray-500 focus:bg-white focus:ring-0"
@@ -87,7 +112,7 @@ const Security_Information = () => {
       <div className="mt-14">
         <p className="text-black_color">
           Được giới thiệu bởi:{" "}
-          <p className="text-success-500 font-bold">#Username</p>
+          <p className="text-success-500 font-bold">#{data.referral_code}</p>
         </p>
         <p className="text-gray_blur_color text-sm mt-2">
           Bằng việc chọn "Đăng ký", thành viên đã chấp nhận điều khoản của chúng
@@ -98,28 +123,49 @@ const Security_Information = () => {
   );
 };
 
-const steps = [
-  {
-    title: "Thông tin cá nhân",
-    content: <Account_Information />,
-  },
-  {
-    title: "Thông tin bảo mật",
-    content: <Security_Information />,
-  },
-];
-
 const App: React.FC = () => {
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
 
   const next = () => {
+    if (!data?.phone || !data?.fullname || !data?.email) {
+      message.error("Vui lòng nhập đầy đủ thông tin!");
+      return;
+    }
+    if (!isPhoneNumberVN(data?.phone)) {
+      message.error("Vui lòng nhập đúng định dạng số điện thoại!");
+      return;
+    }
+    if (!isEmail(data?.email)) {
+      message.error("Vui lòng nhập đúng định dạng email!");
+      return;
+    }
     setCurrent(current + 1);
   };
 
   const prev = () => {
     setCurrent(current - 1);
   };
+  const getRef = () => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window?.location?.href.split("?")[1]);
+      return params.get("ref");
+    }
+  };
+
+  const refCode = getRef();
+  const [data, setData] = useState<any>({ referral_code: refCode });
+
+  const steps = [
+    {
+      title: "Thông tin cá nhân",
+      content: <Account_Information data={data} setData={setData} />,
+    },
+    {
+      title: "Thông tin bảo mật",
+      content: <Security_Information data={data} setData={setData} />,
+    },
+  ];
 
   const items = steps.map((item) => ({ key: item.title, title: item.title }));
 
@@ -135,6 +181,29 @@ const App: React.FC = () => {
 
   const [open, setOpen] = useState(false);
   const router = useRouter();
+
+  const register = async () => {
+    if (!data?.username || !data?.password || !data?.re_password) {
+      message.error("Vui lòng nhập đầy đủ thông tin!");
+      return;
+    }
+    if (!isUsername(data?.username)) {
+      message.error("Vui lòng nhập đúng định dạng username!");
+      return;
+    }
+    if (data?.password != data?.re_password) {
+      message.error("Mật khẩu không khớp, vui lòng kiểm tra!");
+      return;
+    }
+    try {
+      const res = await Api.user.signUp(data);
+      if (res.data.is_correct) {
+        setOpen(true);
+      } else {
+        message.error("Vui lòng thử lại sau!");
+      }
+    } catch (error) {}
+  };
 
   return (
     <div className="w-full bg-white_color py-10 flex flex-col justify-center items-center">
@@ -181,7 +250,7 @@ const App: React.FC = () => {
               radius="sm"
               size="lg"
               disableRipple={true}
-              onClick={() => setOpen(true)}
+              onClick={() => register()}
               className="font-medium text-base text-blue_color_2  bg-white_color hover:bg-blue_color_2 hover:text-white_color"
             >
               Đăng ký
