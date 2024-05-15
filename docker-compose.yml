@@ -1,9 +1,14 @@
-version: "3.7"
-
+version: '3.8'
 services:
-  isgroup-register:
+  app:
+    image: isgroup-register
     build:
-      context: .
-    container_name: isgroup-register
+      context: ./
+      target: dev
+      dockerfile: Dockerfile
+    volumes:
+        - .:/app
+        - /app/node_modules
+        - /app/.next
     ports:
-      - "8080:80"
+      - "8001:8000"
