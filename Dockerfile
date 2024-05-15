@@ -19,14 +19,14 @@ RUN yarn build
 # install Docker tools (cli, buildx, compose)
 
 # 2. For Nginx setup
-FROM nginx:alpine
+# FROM nginx:alpine
 
-COPY --from=development /app/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=development /app/dist/ /var/www/dist/
-COPY --from=development /app/nginx.conf /etc/nginx/nginx.conf
-WORKDIR /usr/share/nginx/html
-RUN rm -rf ./*
+# COPY --from=development /app/nginx.conf /etc/nginx/conf.d/default.conf
+# COPY --from=development /app/out/ /var/www/out/
+# COPY --from=development /app/nginx.conf /etc/nginx/nginx.conf
+# WORKDIR /usr/share/nginx/html
+# RUN rm -rf ./*
 
-COPY --from=development /app/out .
+# COPY --from=development /app/out .
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# ENTRYPOINT ["nginx", "-g", "daemon off;"]
