@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  isgroup-register:
+    build:
+      context: .
+    container_name: isgroup-register
+    ports:
+      - "8080:80"
