@@ -4,8 +4,6 @@ import localFont from "next/font/local";
 import Footer from "@/components/Footer";
 import { Providers } from "./providers";
 
-
-
 const myFont = localFont({
   src: [
     {
@@ -52,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className='light scroll-smooth'>
+    <html lang="en" className="light scroll-smooth mdl-js">
       <body className={myFont.className}>
         <Providers>
           {children}

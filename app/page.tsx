@@ -30,23 +30,25 @@ export default function Page() {
 
           <div className="justify-center flex flex-wrap gap-10 w-full">
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
-              <div className="relative h-[234px] w-[320px] overflow-visible">
-                <Image
-                  width={320}
-                  height={100}
-                  loader={imageLoader}
-                  as={NextImage}
-                  src="/assets/images/cart.png"
-                  alt=""
-                  className="h-[210px]"
-                  radius="none"
-                />
-              </div>
-              <div className="flex justify-center items-center h-[50px]">
-                <p className="font-medium text-large text-black_color -mt-7">
-                  Thương mại điện tử
-                </p>
-              </div>
+              <Link href="#">
+                <div className="relative h-[234px] w-[320px] overflow-visible">
+                  <Image
+                    width={320}
+                    height={100}
+                    loader={imageLoader}
+                    as={NextImage}
+                    src="/assets/images/cart.png"
+                    alt=""
+                    className="h-[210px]"
+                    radius="none"
+                  />
+                </div>
+                <div className="flex justify-center items-center h-[50px]">
+                  <p className="font-medium text-large text-black_color -mt-7">
+                    Thương mại điện tử
+                  </p>
+                </div>
+              </Link>
             </div>
 
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
@@ -73,23 +75,23 @@ export default function Page() {
 
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
               <Link href="/ismove/">
-              <div className=" relative h-[234px] w-[320px] overflow-visible">
-                <Image
-                  width={320}
-                  as={NextImage}
-                  loader={imageLoader}
-                  height={100}
-                  src="/assets/images/delivery.png"
-                  alt=""
-                  className="h-[210px]"
-                  radius="none"
-                />
-              </div>
-              <div className="flex justify-center items-center h-[50px]">
-                <p className="font-medium text-large text-black_color -mt-7">
-                  Gọi xe - Giao hàng
-                </p>
-              </div>
+                <div className=" relative h-[234px] w-[320px] overflow-visible">
+                  <Image
+                    width={320}
+                    as={NextImage}
+                    loader={imageLoader}
+                    height={100}
+                    src="/assets/images/delivery.png"
+                    alt=""
+                    className="h-[210px]"
+                    radius="none"
+                  />
+                </div>
+                <div className="flex justify-center items-center h-[50px]">
+                  <p className="font-medium text-large text-black_color -mt-7">
+                    Gọi xe - Giao hàng
+                  </p>
+                </div>
               </Link>
             </div>
 
@@ -209,8 +211,8 @@ export default function Page() {
             <path
               d="M0 41L139 77L278 49L417 86L556 100L694 109L833 71L972 93L1111 69L1250 63L1389 58L1528 38L1667 61L1806 85L1944 53L2083 81L2222 84L2361 82L2500 97L2500 151L2361 151L2222 151L2083 151L1944 151L1806 151L1667 151L1528 151L1389 151L1250 151L1111 151L972 151L833 151L694 151L556 151L417 151L278 151L139 151L0 151Z"
               fill="#f5f5f5"
-              stroke-linecap="square"
-              stroke-linejoin="bevel"
+              strokeLinecap="square"
+              strokeLinejoin="bevel"
             ></path>
           </svg>
         </div>
@@ -435,3 +437,4 @@ export default function Page() {
     </div>
   );
 }
+export const dynamic = "force-dynamic";

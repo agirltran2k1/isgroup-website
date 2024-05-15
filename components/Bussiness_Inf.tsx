@@ -64,8 +64,8 @@ export default function Page() {
           <path
             d="M0 41L139 77L278 49L417 86L556 100L694 109L833 71L972 93L1111 69L1250 63L1389 58L1528 38L1667 61L1806 85L1944 53L2083 81L2222 84L2361 82L2500 97L2500 151L2361 151L2222 151L2083 151L1944 151L1806 151L1667 151L1528 151L1389 151L1250 151L1111 151L972 151L833 151L694 151L556 151L417 151L278 151L139 151L0 151Z"
             fill="#f5f5f5"
-            stroke-linecap="square"
-            stroke-linejoin="bevel"
+            strokeLinecap="square"
+            strokeLinejoin="bevel"
           ></path>
         </svg>
       </div>
