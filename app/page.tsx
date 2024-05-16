@@ -30,6 +30,7 @@ const Account_Information = ({ data, setData }: any) => {
           onChange={(text) =>
             handleChangeObject("phone", text.target.value, setData)
           }
+          value={data?.phone}
           type="tel"
           placeholder="Nhập số điện thoại"
           required
@@ -47,6 +48,7 @@ const Account_Information = ({ data, setData }: any) => {
           onChange={(text) =>
             handleChangeObject("fullname", text.target.value, setData)
           }
+          value={data?.fullname}
           type="text"
           placeholder="Nhập họ và tên"
           className="w-full p-3 mt-1 block rounded-s-md bg-foreground-100 border-none focus:border-gray-500 focus:bg-white focus:ring-0"
@@ -59,6 +61,7 @@ const Account_Information = ({ data, setData }: any) => {
           onChange={(text) =>
             handleChangeObject("email", text.target.value, setData)
           }
+          value={data?.email}
           type="email"
           placeholder="Nhập email của bạn"
           className="w-full p-3 mt-1 block rounded-s-md bg-foreground-100 border-none focus:border-gray-500 focus:bg-white focus:ring-0"
