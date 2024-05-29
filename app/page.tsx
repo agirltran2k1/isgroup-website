@@ -222,8 +222,8 @@ const App: React.FC = () => {
         </p>
 
         <Image
-          /*loader={imageLoader}
-          as={NextImage}*/
+          loader={imageLoader}
+          as={NextImage}
           src="/assets/images/gleam-childrens-party-with-gifts-and-balloons-1.png"
           alt=""
           width={250}
