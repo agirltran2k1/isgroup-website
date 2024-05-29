@@ -19,7 +19,7 @@ import Api from "@/public/api";
 const Account_Information = ({ data, setData }: any) => {
   return (
     <form
-      className="flex flex-col mx-auto"
+      className=""
       method="post"
       action="#"
       id="infor_form"
@@ -232,7 +232,7 @@ const App: React.FC = () => {
         />
       </div>
 
-      <div className="h-full bg-white_color p-10 rounded-2xl shadow-xl lg:w-1/2">
+      <div className="h-full bg-white_color p-10 w-11/12 rounded-2xl shadow-xl lg:w-1/2">
         <p className="text-black_color text-2xl font-semibold py-8">
           Tham Gia Ngay!
         </p>
