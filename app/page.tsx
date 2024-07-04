@@ -80,7 +80,7 @@ const Security_Information = ({ data, setData }: any) => {
           onChange={(text) =>
             handleChangeObject("username", text.target.value, setData)
           }
-          type="tel"
+          type="text"
           placeholder="Nhập tên đăng nhập"
           required
           autoFocus
