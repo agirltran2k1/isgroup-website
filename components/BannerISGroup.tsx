@@ -18,7 +18,7 @@ export default function Banner() {
         </div>
 
         <p className="text-black_color mt-6 mb-9 text-base text-gray-7 font-normal leading-loose text-center sm:text-left">
-          Ra đời vào năm 2023, ISGroup là một đội ngũ gắn kết chặt chẽ và luôn
+          Ra đời vào năm 2020, ISGroup là một đội ngũ gắn kết chặt chẽ và luôn
           chuyên tâm vào việc xây dựng sản phẩm, mang đến giải pháp tối ưu cho
           khách hàng. Trong suốt quá trình xây dựng và phát triển, tinh thần đó
           không hề thay đổi.
