@@ -1,6 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import React from "react";
 import { Image, Button } from "@nextui-org/react";
 import { imageLoader } from "@/app/utils/ImageLoader";
@@ -9,6 +8,7 @@ import { message, Steps, theme, Modal } from "antd";
 import { useRouter } from "next/navigation";
 import { FaCircleCheck } from "react-icons/fa6";
 import {
+  getLinkDownLoadApp,
   handleChangeObject,
   isEmail,
   isPhoneNumberVN,
@@ -18,12 +18,7 @@ import Api from "@/public/api";
 
 const Account_Information = ({ data, setData }: any) => {
   return (
-    <form
-      className=""
-      method="post"
-      action="#"
-      id="infor_form"
-    >
+    <form className="" method="post" action="#" id="infor_form">
       <div className="">
         <label className="text-black_color font-medium">Số điện thoại</label>
         <input
@@ -101,7 +96,9 @@ const Security_Information = ({ data, setData }: any) => {
       </div>
 
       <div className="mt-10">
-        <label className="text-black_color font-medium">Xác nhận mật khẩu</label>
+        <label className="text-black_color font-medium">
+          Xác nhận mật khẩu
+        </label>
         <input
           onChange={(text) =>
             handleChangeObject("re_password", text.target.value, setData)
@@ -209,6 +206,10 @@ const App: React.FC = () => {
     } catch (error) {}
   };
 
+  const handleDownloadApp = () => {
+    window.location.href = getLinkDownLoadApp();
+  };
+
   return (
     <div className="w-full bg-[#F4F7FE] py-10 flex flex-col justify-center items-center lg:flex lg:flex-row lg:gap-24">
       <div className="h-full flex flex-col justify-center items-center py-6">
@@ -304,17 +305,9 @@ const App: React.FC = () => {
             </p>
 
             <div className="mt-3 justify-center items-center flex flex-col">
-              <p className="text-black_color text-base">Tải ứng dụng tại đây</p>
+              {/* <p className="text-black_color text-base">Tải ứng dụng tại đây</p>
               <div className="w-full flex flex-wrap items-center gap-3">
-                {/*<Image
-                loader={imageLoader}
-                as={NextImage}
-                src="/assets/images/ic_download_googleplay.png"
-                alt=""
-                width={160}
-                height={400}
-                className="hover: cursor-pointer"
-  />*/}
+               
                 <Link href="https://play.google.com/store/apps/details?id=com.islink">
                   <Image
                     src="https://www.svgrepo.com/show/303139/google-play-badge-logo.svg"
@@ -334,6 +327,18 @@ const App: React.FC = () => {
                     className="hover: cursor-pointer -top-8"
                   />
                 </Link>
+              </div> */}
+              <p className="text-black_color">Tải ứng dụng tại đây </p>
+              <div className="w-full items-center ">
+                <div
+                  onClick={handleDownloadApp}
+                  className="rounded-3xl text-white_color text-center text-medium w-full inline-block p-3"
+                  style={{
+                    backgroundColor: "#3B608D",
+                  }}
+                >
+                  Tải App ngay!
+                </div>
               </div>
             </div>
           </div>
