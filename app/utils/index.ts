@@ -34,7 +34,7 @@ export const createForm = (data: any) => {
 
 export const getLinkDownLoadApp = () => {
   const getOS = () => {
-    let uA = navigator.userAgent || navigator.vendor;
+    const uA = navigator.userAgent || navigator.vendor;
     if (
       /iPad|iPhone|iPod/.test(uA) ||
       (uA.includes("Mac") && "ontouchend" in document)
