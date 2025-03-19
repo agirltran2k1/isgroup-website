@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Footer from "@/components/Footer";
 import { Providers } from "./providers";
+import "antd/dist/reset.css";
 
 const myFont = localFont({
   src: [
