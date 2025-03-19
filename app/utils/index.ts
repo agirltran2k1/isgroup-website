@@ -33,7 +33,7 @@ export const createForm = (data: any) => {
 };
 export const getLinkDownLoadApp = () => {
   const getOS = () => {
-    let uA = navigator.userAgent || navigator.vendor;
+    const uA = navigator.userAgent || navigator.vendor;
     if (
       /iPad|iPhone|iPod/.test(uA) ||
       (uA.includes("Mac") && "ontouchend" in document)
@@ -44,9 +44,8 @@ export const getLinkDownLoadApp = () => {
     for (i = 0; i < os.length; i++)
       if (new RegExp(os[i], "i").test(uA)) return os[i];
   };
-
   const linkDownLoadApp =
-    getOS() == "iOS" || "Mac"
+    getOS() === "iOS"
       ? "https://apps.apple.com/us/app/id6472865637"
       : "https://play.google.com/store/apps/details?id=com.islink&pli=1";
 
