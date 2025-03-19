@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import NavBar from "@/components/NavBarISGroup";
 import Banner from "@/components/BannerISGroup";
 import Link from "next/link";
@@ -7,8 +7,10 @@ import React from "react";
 import { Image } from "@nextui-org/react";
 import { imageLoader } from "./utils/ImageLoader";
 import NextImage from "next/image";
+// import { useRouter } from "next/router";
 
 export default function Page() {
+  // const router = useRouter();
   return (
     <div className="w-full bg-white_color">
       <header>
@@ -51,6 +53,9 @@ export default function Page() {
               </Link>
             </div>
 
+            <div onClick={() => console.log("đã click")}>
+              click về trang chủ
+            </div>
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
               <Link href="/ismos/">
                 <div className="relative h-[234px] w-[320px] overflow-visible">

@@ -2,9 +2,12 @@
 import { Image, Button } from "@nextui-org/react";
 import { imageLoader } from "../app/utils/ImageLoader";
 import NextImage from "next/image";
-import Link from "next/link";
+import { getLinkDownLoadApp } from "@/app/utils";
 
 export default function Footer() {
+  const handleDownloadApp = () => {
+    window.location.href = getLinkDownLoadApp();
+  };
   return (
     <section id="footer" className="w-full bg-white_color">
       <div
@@ -35,42 +38,23 @@ export default function Footer() {
             Về chúng tôi →
           </a>
 
-          <div className="mt-3">
-            <p className="text-black_color">Tải ứng dụng tại đây</p>
-            <div className="w-full flex flex-wrap items-center gap-3">
-              {/*<Image
-                loader={imageLoader}
-                as={NextImage}
-                src="/assets/images/ic_download_googleplay.png"
-                alt=""
-                width={160}
-                height={400}
-                className="hover: cursor-pointer"
-  />*/}
-              <Link href="https://play.google.com/store/apps/details?id=com.islink">
-                <Image
-                  src="https://www.svgrepo.com/show/303139/google-play-badge-logo.svg"
-                  width="130"
-                  height="110"
-                  alt=""
-                  className="hover: cursor-pointer -top-8"
-                />
-              </Link>
-
-              <Link href="https://apps.apple.com/vn/app/is-2020/id6472865637">
-              <Image
-                src="https://www.svgrepo.com/show/303128/download-on-the-app-store-apple-logo.svg"
-                width="130"
-                height="110"
-                alt=""
-                className="hover: cursor-pointer -top-8"
-              />
-              </Link>
+          <div className="mt-3 gap-3">
+            <p className="text-black_color">Tải ứng dụng tại đây </p>
+            <div className="w-full items-center ">
+              <div
+                onClick={handleDownloadApp}
+                className="rounded-3xl text-white_color text-center text-medium w-full inline-block p-3"
+                style={{
+                  backgroundColor: "#3B608D",
+                }}
+              >
+                Tải App ngay!
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="md:-mt-20">
+        <div className="md:-mt-10">
           <p className="font-semibold text-black_color leading-loose">
             Tham Gia Bản Tin & Truyền Thông Tiếp Thị Của Chúng Tôi
           </p>

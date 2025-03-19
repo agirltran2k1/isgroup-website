@@ -9,6 +9,7 @@ import { message, Steps, theme, Modal } from "antd";
 import { useRouter } from "next/navigation";
 import { FaCircleCheck } from "react-icons/fa6";
 import {
+  getLinkDownLoadApp,
   handleChangeObject,
   isEmail,
   isPhoneNumberVN,
@@ -126,7 +127,9 @@ const Security_Information = ({ data, setData }: any) => {
 const App: React.FC = () => {
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
-
+  const handleDownloadApp = () => {
+    window.location.href = getLinkDownLoadApp();
+  };
   const next = () => {
     if (!data?.phone || !data?.fullname || !data?.email) {
       message.error("Vui lòng nhập đầy đủ thông tin!");
@@ -280,16 +283,18 @@ const App: React.FC = () => {
           <div className="mt-3 justify-center items-center flex flex-col">
             <p className="text-black_color text-base">Tải ứng dụng tại đây</p>
             <div className="w-full flex flex-wrap items-center gap-3">
-              {/*<Image
-                loader={imageLoader}
-                as={NextImage}
-                src="/assets/images/ic_download_googleplay.png"
-                alt=""
-                width={160}
-                height={400}
-                className="hover: cursor-pointer"
-  />*/}
-              <Link href="https://play.google.com/store/apps/details?id=com.islink">
+              <div className="w-full items-center ">
+                <div
+                  onClick={handleDownloadApp}
+                  className="rounded-3xl text-white_color text-center text-medium w-full inline-block p-3"
+                  style={{
+                    backgroundColor: "#3B608D",
+                  }}
+                >
+                  Tải App ngay!
+                </div>
+              </div>
+              {/* <Link href="https://play.google.com/store/apps/details?id=com.islink">
                 <Image
                   src="https://www.svgrepo.com/show/303139/google-play-badge-logo.svg"
                   width="150"
@@ -307,7 +312,7 @@ const App: React.FC = () => {
                   alt=""
                   className="hover: cursor-pointer -top-8"
                 />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
