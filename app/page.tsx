@@ -4,7 +4,7 @@ import React from "react";
 import { Image, Button } from "@nextui-org/react";
 import { imageLoader } from "@/app/utils/ImageLoader";
 import NextImage from "next/image";
-import { message, Steps, theme, Modal } from "antd";
+import { message, Steps, theme, Modal, Input } from "antd";
 import { useRouter } from "next/navigation";
 import { FaCircleCheck } from "react-icons/fa6";
 import {
@@ -23,7 +23,11 @@ const Account_Information = ({ data, setData }: any) => {
         <label className="text-black_color font-medium">Số điện thoại</label>
         <input
           onChange={(text) =>
-            handleChangeObject("phone", text.target.value, setData)
+            handleChangeObject(
+              "phone",
+              text.target.value.replace(/\D/g, ""),
+              setData
+            )
           }
           value={data?.phone}
           type="tel"
@@ -70,11 +74,21 @@ const Security_Information = ({ data, setData }: any) => {
   return (
     <form className="" method="post" action="#" id="infor_form">
       <div className="">
-        <label className="text-black_color font-medium">Tên đăng nhập</label>
+        <label className="text-black_color font-medium">
+          Tên đăng nhập (Viết liền không dấu)
+        </label>
         <input
-          onChange={(text) =>
-            handleChangeObject("username", text.target.value, setData)
+          onChange={(e) =>
+            handleChangeObject(
+              "username",
+              e.target.value
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/\s+/g, ""),
+              setData
+            )
           }
+          value={data.username}
           type="text"
           placeholder="Nhập tên đăng nhập"
           required
@@ -85,28 +99,34 @@ const Security_Information = ({ data, setData }: any) => {
 
       <div className="mt-10">
         <label className="text-black_color font-medium">Mật khẩu</label>
-        <input
+        <Input.Password
+          className="w-full p-3 mt-1 rounded-md bg-white_color border-1.5 border-foreground-200 focus:border-gray-500 focus:bg-white focus:ring-0"
+          placeholder="Nhập mật khẩu"
+          onChange={(text) =>
+            handleChangeObject("password", text.target.value, setData)
+          }
+        />
+        {/* <input
           onChange={(text) =>
             handleChangeObject("password", text.target.value, setData)
           }
           type="password"
           placeholder="Nhập mật khẩu"
           className="w-full p-3 mt-1 block rounded-md bg-white_color border-1.5 border-foreground-200 focus:border-gray-500 focus:bg-white focus:ring-0"
-        ></input>
+        ></input> */}
       </div>
 
       <div className="mt-10">
         <label className="text-black_color font-medium">
           Xác nhận mật khẩu
         </label>
-        <input
+        <Input.Password
+          className="w-full p-3 mt-1 rounded-md bg-white_color border-1.5 border-foreground-200 focus:border-gray-500 focus:bg-white focus:ring-0"
+          placeholder="Nhập lại mật khẩu"
           onChange={(text) =>
             handleChangeObject("re_password", text.target.value, setData)
           }
-          type="password"
-          placeholder="Nhập lại mật khẩu"
-          className="w-full p-3 mt-1 block rounded-md bg-white_color border-1.5 border-foreground-200 focus:border-gray-500 focus:bg-white focus:ring-0"
-        ></input>
+        />
       </div>
 
       <div className="mt-10">
@@ -127,35 +147,56 @@ const Security_Information = ({ data, setData }: any) => {
 const App: React.FC = () => {
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
-
-  const next = () => {
-    if (!data?.phone || !data?.fullname || !data?.email) {
-      message.error("Vui lòng nhập đầy đủ thông tin!");
-      return;
-    }
-    if (!isPhoneNumberVN(data?.phone)) {
-      message.error("Vui lòng nhập đúng định dạng số điện thoại!");
-      return;
-    }
-    if (!isEmail(data?.email)) {
-      message.error("Vui lòng nhập đúng định dạng email!");
-      return;
-    }
-    setCurrent(current + 1);
-  };
-
-  const prev = () => {
-    setCurrent(current - 1);
-  };
   const getRef = () => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window?.location?.href.split("?")[1]);
       return params.get("ref");
     }
   };
-
   const refCode = getRef();
-  const [data, setData] = useState<any>({ referral_code: refCode });
+  const [data, setData] = useState<any>({ referral_code: refCode || "" });
+  const checkEmailIsExist = async () => {
+    if (!isEmail(data?.email)) {
+      message.error("Vui lòng nhập đúng định dạng email!");
+      return true;
+    }
+    const res = await Api.user.checkMail(data.email);
+    if (res.status === 200 && res.data.data.is_exist) {
+      message.error("Email đã được đăng kí!");
+      return true;
+    }
+    return false;
+  };
+  const checkPhoneIsExist = async () => {
+    if (!isPhoneNumberVN(data?.phone)) {
+      message.error("Vui lòng nhập đúng định dạng số điện thoại!");
+      return true;
+    }
+    const res = await Api.user.checkPhone(data.phone);
+    if (!res.data.is_correct) {
+      message.error("Số điện thoại đã được đăng kí!");
+      return true;
+    }
+    return false;
+  };
+  const next = async () => {
+    const checkEmail = await checkEmailIsExist();
+    const checkPhone = await checkPhoneIsExist();
+    if (checkEmail || checkPhone) {
+      return;
+    }
+
+    if (!data?.fullname) {
+      message.error("Vui lòng nhập đầy đủ thông tin!");
+      return;
+    }
+
+    setCurrent(current + 1);
+  };
+
+  const prev = () => {
+    setCurrent(current - 1);
+  };
 
   const steps = [
     {
@@ -201,9 +242,18 @@ const App: React.FC = () => {
       if (res.data.is_correct) {
         setOpen(true);
       } else {
-        message.error("Vui lòng thử lại sau!");
+        message.error(res.data.msg);
       }
-    } catch (error) {}
+    } catch (error: any) {
+      console.log("error:", error.response.data.detail);
+      console.log("error:", error.response);
+      if (
+        error.response.status == 400 &&
+        error.response.data.detail == "User already exists"
+      ) {
+        message.error("Tên đăng nhập đã tồn tại!");
+      }
+    }
   };
 
   const handleDownloadApp = () => {

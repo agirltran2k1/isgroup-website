@@ -10,6 +10,7 @@ import {
   GET_USER_DETAIL,
   UPDATE_INFO_USER,
   CHECK_PHONE,
+  CHECK_MAIL,
   GET_OTP_CODE,
   RESET_PASSWORD,
   SEND_MAIL_WELCOME,
@@ -79,7 +80,11 @@ export default class User {
       params: { phone },
     });
   }
-
+  checkMail(email: string) {
+    return axiosInstanceUser("application/json").get(CHECK_MAIL, {
+      params: { email },
+    });
+  }
   getUserDetailByUsername(username: string) {
     return axiosInstanceUser("application/json").get(
       GET_USER_DETAIL_BY_USERNAME.replace("${username}", username)
