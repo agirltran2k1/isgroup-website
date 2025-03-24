@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "HOST=0.0.0.0 next dev",
     "prebuild": "rm -rf .next",
-    "build": "rm -rf .next && next build ",
+    "build": "yarn prebuild && next build ",
     "start": "next start",
     "lint": "next lint"
   },

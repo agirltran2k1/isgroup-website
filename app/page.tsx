@@ -53,9 +53,6 @@ export default function Page() {
               </Link>
             </div>
 
-            <div onClick={() => console.log("đã click")}>
-              click về trang chủ
-            </div>
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
               <Link href="/ismos/">
                 <div className="relative h-[234px] w-[320px] overflow-visible">
