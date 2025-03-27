@@ -155,46 +155,52 @@ const App: React.FC = () => {
   };
   const refCode = getRef();
   const [data, setData] = useState<any>({ referral_code: refCode || "" });
-  const checkEmailIsExist = async () => {
-    if (!isEmail(data?.email)) {
-      message.error("Vui lòng nhập đúng định dạng email!");
-      return true;
+
+  const checkFieldIsExist = async (type: "email" | "phone", value: string) => {
+    let isValid = true;
+    let errorMessage = "";
+
+    if (type === "email") {
+      if (!isEmail(value)) {
+        errorMessage = "Vui lòng nhập đúng định dạng email!";
+      } else {
+        const res = await Api.user.checkMail(value);
+        if (res.status === 200 && res.data.data.is_exist) {
+          errorMessage = "Email đã được đăng kí!";
+        }
+      }
+    } else if (type === "phone") {
+      if (!isPhoneNumberVN(value)) {
+        errorMessage = "Vui lòng nhập đúng định dạng số điện thoại!";
+      } else {
+        const res = await Api.user.checkPhone(value);
+        if (res.data.is_correct) {
+          errorMessage = "Số điện thoại đã được đăng kí!";
+        }
+      }
     }
-    const res = await Api.user.checkMail(data.email);
-    if (res.status === 200 && res.data.data.is_exist) {
-      message.error("Email đã được đăng kí!");
-      return true;
-    }
-    return false;
-  };
-  const checkPhoneIsExist = async () => {
-    if (!isPhoneNumberVN(data?.phone)) {
-      message.error("Vui lòng nhập đúng định dạng số điện thoại!");
-      return true;
-    }
-    const res = await Api.user.checkPhone(data.phone);
-    if (!res.data.is_correct) {
-      message.error("Số điện thoại đã được đăng kí!");
-      return true;
-    }
-    return false;
-  };
-  const next = async () => {
-    const checkEmail = await checkEmailIsExist();
-    const checkPhone = await checkPhoneIsExist();
-    if (checkEmail || checkPhone) {
-      return;
+    if (errorMessage) {
+      message.error(errorMessage);
+      isValid = false;
     }
 
-    if (!data?.fullname) {
+    return isValid;
+  };
+  const nextStep = async () => {
+    if (!data?.phone || !data?.fullname || !data?.email) {
       message.error("Vui lòng nhập đầy đủ thông tin!");
       return;
     }
+    const isPhoneValid = await checkFieldIsExist("phone", data?.phone);
+    if (!isPhoneValid) return;
+
+    const isEmailValid = await checkFieldIsExist("email", data?.email);
+    if (!isEmailValid) return;
 
     setCurrent(current + 1);
   };
 
-  const prev = () => {
+  const prevStep = () => {
     setCurrent(current - 1);
   };
 
@@ -304,7 +310,7 @@ const App: React.FC = () => {
                   radius="full"
                   size="lg"
                   disableRipple={true}
-                  onClick={() => next()}
+                  onClick={() => nextStep()}
                   className="w-40 font-medium text-base text-[#D3D6DD] bg-[#23262F]"
                 >
                   Tiếp theo
@@ -316,7 +322,7 @@ const App: React.FC = () => {
                 radius="full"
                 size="lg"
                 disableRipple={true}
-                onClick={() => prev()}
+                onClick={() => prevStep()}
                 className="w-40 font-medium text-base text-foreground-600 bg-foreground-100"
               >
                 Quay lại
