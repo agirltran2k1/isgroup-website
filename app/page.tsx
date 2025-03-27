@@ -1,5 +1,4 @@
 "use client";
-// import { useState } from "react";
 import NavBar from "@/components/NavBarISGroup";
 import Banner from "@/components/BannerISGroup";
 import Link from "next/link";
@@ -54,7 +53,7 @@ export default function Page() {
             </div>
 
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
-              <Link href="/ismos/">
+              <Link href="/ismos/home">
                 <div className="relative h-[234px] w-[320px] overflow-visible">
                   <Image
                     as={NextImage}
@@ -76,7 +75,7 @@ export default function Page() {
             </div>
 
             <div className="flex flex-col shadow-lg rounded-xl overflow-hidden hover:cursor-pointer hover:scale-110 transition">
-              <Link href="/ismove/">
+              <Link href="/ismove/home">
                 <div className=" relative h-[234px] w-[320px] overflow-visible">
                   <Image
                     width={320}
@@ -218,223 +217,6 @@ export default function Page() {
             ></path>
           </svg>
         </div>
-        <section id="clients_rate" className="pb-10 -mt-16 bg-foreground-100">
-          <div>
-            <p className="text-black_color text-3xl font-medium text-center pt-10 leading-loose">
-              Đánh giá
-            </p>
-            <p className="text-black_color mb-9 text-base text-gray-7 font-normal text-center">
-              Khách hàng nói gì về chúng tôi?
-            </p>
-          </div>
-
-          <div
-            id="rate_list"
-            className="justify-center flex flex-wrap w-full gap-10 p-10 -mt-10"
-          >
-            <div
-              id="rate_box"
-              className="rounded-lg bg-white_color p-10 w-[400px]"
-            >
-              <div className="flex items-center mb-3">
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 ms-1 text-foreground-300 dark:text-gray-500"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-              </div>
-
-              <div>
-                <p className="text-lg font-semibold text-black_color leading-loose">
-                  Tuyệt vời
-                </p>
-                <p className="text-gray_blur_color leading-loose text-sm">
-                  Không chỉ đáp ứng nhu cầu mà còn mang đến những sự đột phá.
-                  Chính sự chuyên nghiệp, linh hoạt và tận tâm của họ đã giúp
-                  chúng tôi có được một trải nghiệm làm việc và hợp tác đáng
-                  nhớ.
-                </p>
-                <p className="text-blue_color_2 leading-loose text-sm font-medium text-right">
-                  Nguyễn Thu Trang - Tháng 3,2024
-                </p>
-              </div>
-            </div>
-
-            <div
-              id="rate_box"
-              className="rounded-lg bg-white_color p-10  w-[400px]"
-            >
-              <div className="flex items-center mb-3">
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-              </div>
-
-              <div>
-                <p className="text-lg font-semibold text-black_color leading-loose">
-                  Tốt lắm
-                </p>
-                <p className="text-gray_blur_color leading-loose text-sm">
-                  Dịch vụ phát triển mà ISGroup cung cấp thực sự rất ấn tượng.
-                  Họ không chỉ mang đến sản phẩm có chất lượng vượt trội mà còn
-                  thể hiện được sự tận tâm, chuyên nghiệp trong từng chi tiết.
-                  Tôi hoàn toàn hài lòng với sản phẩm đầu ra và không thể vui
-                  hơn với sự lựa chọn này.
-                </p>
-                <p className="text-blue_color_2 leading-loose text-sm font-medium text-right">
-                  Trần Minh Nhân - Tháng 3,2024
-                </p>
-              </div>
-            </div>
-
-            <div
-              id="rate_box"
-              className="rounded-lg bg-white_color p-10  w-[400px]"
-            >
-              <div className="flex items-center mb-3">
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg
-                  className="w-6 h-6 text-warning-300 ms-1"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-              </div>
-
-              <div>
-                <p className="text-lg font-semibold text-black_color leading-loose">
-                  Tôi rất thích
-                </p>
-                <p className="text-gray_blur_color leading-loose text-sm">
-                  Phần mềm sử dụng rất tốt. Mong các bạn tiếp tục phát triển.
-                </p>
-                <p className="text-blue_color_2 leading-loose text-sm font-medium text-right">
-                  Trần Văn Toàn - Tháng 1,2024
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   );

@@ -2,8 +2,8 @@ import NavBar from "@/components/NavBarISMos";
 import Banner from "@/components/BannerISMos";
 import Bussiness_Inf from "@/components/Bussiness_Inf";
 import { Image } from "@nextui-org/react";
-import { imageLoader } from "../utils/ImageLoader";
 import NextImage from "next/image";
+import { imageLoader } from "@/app/utils/ImageLoader";
 
 export default function Page() {
   return (
@@ -180,11 +180,11 @@ export default function Page() {
 
             <div className="justify-center flex flex-wrap gap-10 w-full mt-5">
               <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
-                <div className="relative overflow-visible w-[320px]">
+                <div className="relative overflow-visible w-[350px]">
                   <Image
                     as={NextImage}
                     loader={imageLoader}
-                    width={320}
+                    width={350}
                     height={100}
                     src="/assets/images/ISMOS/img_6.png"
                     alt=""
@@ -192,7 +192,7 @@ export default function Page() {
                     radius="none"
                   />
                 </div>
-                <div className="block justify-center items-center w-[320px] p-5">
+                <div className="block justify-center items-center w-[350px] p-5">
                   <p className="font-medium text-large text-black_color mb-2 text-center">
                     Trải nghiệm bán lẻ hoàn toàn mới
                   </p>
@@ -206,10 +206,10 @@ export default function Page() {
               </div>
 
               <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
-                <div className="relative overflow-visible w-[320px]">
+                <div className="relative overflow-visible w-[350px]">
                   <Image
                     as={NextImage}
-                    width={320}
+                    width={350}
                     height={300}
                     loader={imageLoader}
                     src="/assets/images/ISMOS/img_7.png"
@@ -218,7 +218,7 @@ export default function Page() {
                     radius="none"
                   />
                 </div>
-                <div className="block justify-center items-center w-[320px] p-5">
+                <div className="block justify-center items-center w-[350px] p-5">
                   <p className="font-medium text-large text-black_color mb-2 text-center">
                     Đồng bộ dữ liệu trong thời gian thực
                   </p>
@@ -231,11 +231,11 @@ export default function Page() {
               </div>
 
               <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
-                <div className="relative overflow-visible w-[320px]">
+                <div className="relative overflow-visible w-[350px]">
                   <Image
                     as={NextImage}
                     loader={imageLoader}
-                    width={320}
+                    width={350}
                     height={300}
                     src="/assets/images/ISMOS/img_8.png"
                     alt=""
@@ -243,7 +243,7 @@ export default function Page() {
                     radius="none"
                   />
                 </div>
-                <div className="block justify-center items-center w-[320px] p-5">
+                <div className="block justify-center items-center w-[350px] p-5">
                   <p className="font-medium text-large text-black_color mb-2 text-center">
                     Tự động bán lại khách hàng cũ
                   </p>
