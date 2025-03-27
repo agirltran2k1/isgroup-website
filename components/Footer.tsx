@@ -38,42 +38,27 @@ export default function Footer() {
             Về chúng tôi →
           </a>
 
-          {/* <div className="mt-3">
-            <p className="text-black_color">Tải ứng dụng tại đây</p>
-            <div className="w-full flex flex-wrap items-center gap-3">
-              <Link href="https://play.google.com/store/apps/details?id=com.islink">
-                <Image
-                  src="https://www.svgrepo.com/show/303139/google-play-badge-logo.svg"
-                  width="130"
-                  height="110"
-                  alt=""
-                  className="hover: cursor-pointer -top-8"
-                />
-              </Link>
-
-              <Link href="https://apps.apple.com/vn/app/is-2020/id6472865637">
-                <Image
-                  src="https://www.svgrepo.com/show/303128/download-on-the-app-store-apple-logo.svg"
-                  width="130"
-                  height="110"
-                  alt=""
-                  className="hover: cursor-pointer -top-8"
-                />
-              </Link>
-            </div>
-          </div> */}
           <div className="mt-3 gap-3">
-            <p className="text-black_color">Tải ứng dụng tại đây </p>
-            <div className="w-full items-center ">
+            <div className="w-full items-center">
               <div
                 onClick={handleDownloadApp}
-                className="rounded-3xl cursor-pointer text-white_color text-center text-medium w-full inline-block p-3"
+                className="rounded-3xl cursor-pointer text-white_color text-center text-medium w-full inline-block p-3 mb-3"
                 style={{
                   backgroundColor: "#3B608D",
                 }}
               >
                 Tải App ngay!
               </div>
+              <a
+                className="rounded-3xl text-white_color cursor-pointer text-center text-medium w-full inline-block p-3"
+                style={{
+                  backgroundColor: "rgb(2, 143, 92)",
+                }}
+                href="https://drive.google.com/uc?export=download&id=1tuhJ064klulxX46untAOa7Fr4pUxudc5"
+                download
+              >
+                Tải APK tại đây!
+              </a>
             </div>
           </div>
         </div>
