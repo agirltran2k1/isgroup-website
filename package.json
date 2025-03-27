@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "HOST=0.0.0.0 next dev",
-    "prebuild": "rm -rf .next",
-    "build": "next build",
+    "dev": "next dev",
+    "prebuild": "rm -rf .next out",
+    "build": "rm -rf .next out&&next build",
     "start": "next start",
     "lint": "next lint"
   },
