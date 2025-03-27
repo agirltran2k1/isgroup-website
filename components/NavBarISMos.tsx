@@ -17,7 +17,7 @@ export default function NavBar() {
   };
 
   const menuItems = [
-    { id: 1, label: "Trang chủ", route: "/ismos" },
+    { id: 1, label: "Trang chủ", route: "/ismos/home" },
     { id: 2, label: "Giới thiệu", route: "/ismos/introduction" },
     { id: 3, label: "Bảng giá", route: "/ismos/price_list" },
     { id: 4, label: "Hướng dẫn", route: "/ismos/instruction" },
@@ -72,7 +72,7 @@ export default function NavBar() {
       }`}
     >
       <div className="h-full flex items-center justify-between mx-auto px-4 bg-white_color">
-        <Link href="/ismos">
+        <Link href="/">
           <div className="w-8/12">
             <Image
               as={NextImage}
