@@ -8,6 +8,7 @@ export default function Footer() {
   const handleDownloadApp = () => {
     window.location.href = getLinkDownLoadApp();
   };
+
   return (
     <section id="footer" className="w-full bg-white_color">
       <div
@@ -39,17 +40,26 @@ export default function Footer() {
           </a>
 
           <div className="mt-3 gap-3">
-            <p className="text-black_color">Tải ứng dụng tại đây </p>
-            <div className="w-full items-center ">
+            <div className="w-full flex-col  items-center ">
               <div
                 onClick={handleDownloadApp}
-                className="rounded-3xl text-white_color text-center text-medium w-full inline-block p-3"
+                className="rounded-3xl text-white_color cursor-pointer text-center mb-3 text-medium w-full inline-block p-3"
                 style={{
                   backgroundColor: "#3B608D",
                 }}
               >
                 Tải App ngay!
               </div>
+              <a
+                className="rounded-3xl text-white_color cursor-pointer text-center text-medium w-full inline-block p-3"
+                style={{
+                  backgroundColor: "rgb(2, 143, 92)",
+                }}
+                href="https://drive.google.com/uc?export=download&id=1tuhJ064klulxX46untAOa7Fr4pUxudc5"
+                download
+              >
+                Tải APK tại đây!
+              </a>
             </div>
           </div>
         </div>

@@ -1,10 +1,7 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import React from "react";
-import { Image, Button } from "@nextui-org/react";
-import { imageLoader } from "@/app/utils/ImageLoader";
-import NextImage from "next/image";
+import { Button } from "@nextui-org/react";
 import { message, Steps, theme, Modal } from "antd";
 import { useRouter } from "next/navigation";
 import { FaCircleCheck } from "react-icons/fa6";
@@ -286,12 +283,21 @@ const App: React.FC = () => {
               <div className="w-full items-center ">
                 <div
                   onClick={handleDownloadApp}
-                  className="rounded-3xl text-white_color text-center text-medium w-full inline-block p-3"
+                  className="rounded-3xl text-white_color cursor-pointer text-center text-medium w-full inline-block p-3"
                   style={{
                     backgroundColor: "#3B608D",
                   }}
                 >
                   Tải App ngay!
+                </div>
+                <div
+                  onClick={handleDownloadApp}
+                  className="rounded-3xl text-white_color cursor-pointer text-center text-medium w-full inline-block p-3"
+                  style={{
+                    backgroundColor: "#3B608D",
+                  }}
+                >
+                  Tải APK tại đây!
                 </div>
               </div>
               {/* <Link href="https://play.google.com/store/apps/details?id=com.islink">
