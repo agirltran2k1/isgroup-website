@@ -1,8 +1,6 @@
 "use client";
 import NavBar from "@/components/NavBarISMos";
 import Bussiness_Inf from "@/components/Bussiness_Inf";
-import Banner from "@/components/BannerISMos";
-import Link from "next/link";
 import NextImage from "next/image";
 import { Image } from "@nextui-org/react";
 import React, { useState } from "react";
@@ -135,7 +133,7 @@ export default function Page() {
 
         {/*CÂU HỎI THƯỜNG GẶP*/}
         <div className="-mt-10">
-        <p className="text-black_color text-3xl font-medium text-center pt-10 leading-loose px-10">
+          <p className="text-black_color text-3xl font-medium text-center pt-10 leading-loose px-10">
             Câu hỏi thường gặp
           </p>
 
@@ -147,9 +145,17 @@ export default function Page() {
                     {item.id}. {item.question}
                   </p>
                   {isOpenAnswer === item.id ? (
-                    <RxChevronUp size={28} color="#424242" className="cursor-pointer" />
+                    <RxChevronUp
+                      size={28}
+                      color="#424242"
+                      className="cursor-pointer"
+                    />
                   ) : (
-                    <RxChevronDown size={28} color="#424242" className="cursor-pointer" />
+                    <RxChevronDown
+                      size={28}
+                      color="#424242"
+                      className="cursor-pointer"
+                    />
                   )}
                 </div>
                 {isOpenAnswer === item.id && (
